@@ -1,4 +1,2836 @@
-const student = [
+const entreprises = [
+  {
+    "rue": "313 Terasse de l'ARCHE",
+    "code_postal": 92000,
+    "ville": "NANTERRE",
+    "identifiant_eleve": 49360502843154960000
+  },
+  {
+    "rue": "125 avenue de Paris",
+    "code_postal": 92320,
+    "ville": "Châtillon",
+    "identifiant_eleve": 93557743512479660000
+  },
+  {
+    "rue": "48 rue de Neuilly",
+    "code_postal": 92110,
+    "ville": "CLICHY",
+    "identifiant_eleve": 56764762506615970000
+  },
+  {
+    "rue": "3 AV DIVISION LECLERC",
+    "code_postal": 92160,
+    "ville": "ANTONY",
+    "identifiant_eleve": 47430453461943090000
+  },
+  {
+    "rue": "40 impasse Madeleine Brès",
+    "code_postal": 77127,
+    "ville": "Lieusaint",
+    "identifiant_eleve": 20339210651904205000
+  },
+  {
+    "rue": "313 Terrasse de l'Arche",
+    "code_postal": 92727,
+    "ville": "NANTERRE",
+    "identifiant_eleve": 28926910207294750000
+  },
+  {
+    "rue": "5, rue de la Terrasse",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 68264230577539146000
+  },
+  {
+    "rue": "18 RUE TAYLOR",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 49899945203878980000
+  },
+  {
+    "rue": "1, boulevard Archimède - Champs sur Marne",
+    "code_postal": 77444,
+    "ville": "MARNE LA VALLEE CEDEX 2",
+    "identifiant_eleve": 35549987959533810000
+  },
+  {
+    "rue": "ZI des Bas Prés",
+    "code_postal": 60761,
+    "ville": "MONTATAIRE",
+    "identifiant_eleve": 39693847638323960000
+  },
+  {
+    "rue": "94 avenue Ledru Rollin",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 65490840287640730000
+  },
+  {
+    "rue": "13-15 Avenue du Maréchal Juin",
+    "code_postal": 92360,
+    "ville": "MEUDON LA FORÊT",
+    "identifiant_eleve": 10974891839097430000
+  },
+  {
+    "rue": "50 boulevard Voltaire",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 93520346698727110000
+  },
+  {
+    "rue": "34 RUE DE LA FORET",
+    "code_postal": 91860,
+    "ville": "EPINAY SOUS SENART",
+    "identifiant_eleve": 83270912579561130000
+  },
+  {
+    "rue": "27/31 Avenue du Général Leclerc",
+    "code_postal": 94710,
+    "ville": "MAISONS ALFORT CEDEX",
+    "identifiant_eleve": 7754850364822015000
+  },
+  {
+    "rue": "46, Place Abel Gance",
+    "code_postal": 92100,
+    "ville": "BOULOGNE BILLANCOURT",
+    "identifiant_eleve": 97083995381513420000
+  },
+  {
+    "rue": "30 AVENUE CORENTIN CARIOU",
+    "code_postal": 75019,
+    "ville": "Paris",
+    "identifiant_eleve": 16069107185632168000
+  },
+  {
+    "rue": "72 rue de la République",
+    "code_postal": 76140,
+    "ville": "LE PETIT QUEVILLY",
+    "identifiant_eleve": 54284819918344310000
+  },
+  {
+    "rue": "108 allée François Mitterrand - CS 50589",
+    "code_postal": 76006,
+    "ville": "Rouen",
+    "identifiant_eleve": 7621532604675578000
+  },
+  {
+    "rue": "10, ALLEE DES CASCADES",
+    "code_postal": 93420,
+    "ville": "VILLEPINTE",
+    "identifiant_eleve": 33756268425348610000
+  },
+  {
+    "rue": "18 RUE LA FAYETTE",
+    "code_postal": 75009,
+    "ville": "Paris",
+    "identifiant_eleve": 9684262198142150000
+  },
+  {
+    "rue": "231 rue des Caboeufs",
+    "code_postal": 92230,
+    "ville": "GENNEVILLIERS",
+    "identifiant_eleve": 43961223624738390000
+  },
+  {
+    "rue": "4 rue de Ventadour",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 5008237194551413000
+  },
+  {
+    "rue": "69 avenue Danielle Casanova",
+    "code_postal": 94200,
+    "ville": "IVRY-SUR-SEINE",
+    "identifiant_eleve": 62134622433663110000
+  },
+  {
+    "rue": "6 RUE RAOUL NORDLING",
+    "code_postal": 92270,
+    "ville": "Bois Colombes",
+    "identifiant_eleve": 42135696774650405000
+  },
+  {
+    "rue": "249 Avenue du président Wilson",
+    "code_postal": 93210,
+    "ville": "la plaine st denis",
+    "identifiant_eleve": 774198582026494100
+  },
+  {
+    "rue": "17 rue Claude Bloch",
+    "code_postal": 14000,
+    "ville": "CAEN",
+    "identifiant_eleve": 20360463202426700000
+  },
+  {
+    "rue": "4B, Rue Lafayette",
+    "code_postal": 38000,
+    "ville": "Grenoble",
+    "identifiant_eleve": 34601298778974070000
+  },
+  {
+    "rue": "11 avenue Henri Farman - 748",
+    "code_postal": 94398,
+    "ville": "ORLY AEROGARE CEDEX",
+    "identifiant_eleve": 4847161888675215000
+  },
+  {
+    "rue": "18 passage du chantier",
+    "code_postal": 75012,
+    "ville": "Paris",
+    "identifiant_eleve": 7278174627933647000
+  },
+  {
+    "rue": "5 bis rue des Haudriettes",
+    "code_postal": 75003,
+    "ville": "Paris",
+    "identifiant_eleve": 71695518148438660000
+  },
+  {
+    "rue": "24 RUE DES COMPAGNONS",
+    "code_postal": 51350,
+    "ville": "CORMONTREUIL",
+    "identifiant_eleve": 5448745026156303000
+  },
+  {
+    "rue": "25 Rue Balard",
+    "code_postal": 75015,
+    "ville": "Paris",
+    "identifiant_eleve": 60167829651768025000
+  },
+  {
+    "rue": "36 bd de la Bastille",
+    "code_postal": 75012,
+    "ville": "Paris",
+    "identifiant_eleve": 9660068104837777000
+  },
+  {
+    "rue": "128 Rue De La Boétie",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 91390576310496940000
+  },
+  {
+    "rue": "137 rue d'Aguesseau",
+    "code_postal": 92100,
+    "ville": "BOULOGNE BILLANCOURT",
+    "identifiant_eleve": 86686976081785750000
+  },
+  {
+    "rue": "1 RUE REMBRANDT",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 10613801884450902000
+  },
+  {
+    "rue": "4-6 rue des Chauffours",
+    "code_postal": 95000,
+    "ville": "CERGY",
+    "identifiant_eleve": 83813303628153240000
+  },
+  {
+    "rue": "90 boulevard Pasteur",
+    "code_postal": 75015,
+    "ville": "paris",
+    "identifiant_eleve": 76506621233689230000
+  },
+  {
+    "rue": "224 rue du Faubourg Saint-Antoine",
+    "code_postal": 75012,
+    "ville": "PARIS",
+    "identifiant_eleve": 43234577922010990000
+  },
+  {
+    "rue": "32 34 rue Marbeuf",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 78169825214975800000
+  },
+  {
+    "rue": "7 rue des Caillots",
+    "code_postal": 93100,
+    "ville": "Montreuil",
+    "identifiant_eleve": 8537713407260369000
+  },
+  {
+    "rue": "9 rue Brey",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 94157964796974040000
+  },
+  {
+    "rue": "135 rue du Mont Cénis",
+    "code_postal": 75018,
+    "ville": "PARIS",
+    "identifiant_eleve": 58592030319882250000
+  },
+  {
+    "rue": "16 RUE DU DOME",
+    "code_postal": 92100,
+    "ville": "BOULOGNE-BILLANCOURT",
+    "identifiant_eleve": 19012528689108160000
+  },
+  {
+    "rue": "33 boulevard du Port",
+    "code_postal": 95011,
+    "ville": "CERGY PONTOISE Cedex",
+    "identifiant_eleve": 27064032727024124000
+  },
+  {
+    "rue": "52 rue Richer",
+    "code_postal": 75009,
+    "ville": "Paris",
+    "identifiant_eleve": 38193585274173555000
+  },
+  {
+    "rue": "3 Rue de SIAM",
+    "code_postal": 75116,
+    "ville": "Paris",
+    "identifiant_eleve": 5837027170541833000
+  },
+  {
+    "rue": "50/52 Boulevard HAUSSMANN",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 83095100011495460000
+  },
+  {
+    "rue": "116, rue Réaumur",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 26167035309978680000
+  },
+  {
+    "rue": "82 blvd beaumarchais",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 38322392901378600000
+  },
+  {
+    "rue": "Zac du Marcreux 20 Rue Marcel Carné",
+    "code_postal": 93300,
+    "ville": "Aubervilliers",
+    "identifiant_eleve": 59532173927160240000
+  },
+  {
+    "rue": "7 impasse Marie Blanche",
+    "code_postal": 75018,
+    "ville": "Paris",
+    "identifiant_eleve": 85075512994217820000
+  },
+  {
+    "rue": "20 bis rue Louis Philippe",
+    "code_postal": 92200,
+    "ville": "Neuilly Sur Seine",
+    "identifiant_eleve": 96377480511804870000
+  },
+  {
+    "rue": "24 PLACE VENDOME",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 21443085703041606000
+  },
+  {
+    "rue": "33, rue de La Fayette",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 76377383438989540000
+  },
+  {
+    "rue": "3 avenue du centre",
+    "code_postal": 78280,
+    "ville": "GUYANCOURT",
+    "identifiant_eleve": 65097896615833340000
+  },
+  {
+    "rue": "47 RUE DE CHARENTON",
+    "code_postal": 75012,
+    "ville": "Paris",
+    "identifiant_eleve": 32446150426789810000
+  },
+  {
+    "rue": "100-101 Terrasse Boieldieu",
+    "code_postal": 92800,
+    "ville": "PUTEAUX",
+    "identifiant_eleve": 11798372902801170000
+  },
+  {
+    "rue": "313, Terrasses de L'Arche",
+    "code_postal": 92000,
+    "ville": "NANTERRE",
+    "identifiant_eleve": 70635871929395880000
+  },
+  {
+    "rue": "214 Rue du Faubourg Saint-Martin",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 54694197244665530000
+  },
+  {
+    "rue": "68 rue René Boulanger",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 42323301635904004000
+  },
+  {
+    "rue": "11 rue des petites écuries",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 22813402451890200000
+  },
+  {
+    "rue": "6 RUE DE NICE",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 68757927963884446000
+  },
+  {
+    "rue": "5 BIS RUE GUY MOQUET",
+    "code_postal": 95100,
+    "ville": "ARGENTEUIL",
+    "identifiant_eleve": 92219878865827330000
+  },
+  {
+    "rue": "4, avenue du 8 mai 1945",
+    "code_postal": 78280,
+    "ville": "GUYANCOURT",
+    "identifiant_eleve": 43221412926402390000
+  },
+  {
+    "rue": "8 rue de la ville l'évêque",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 36301347147575255000
+  },
+  {
+    "rue": "1 Impasse des Paillons",
+    "code_postal": 77700,
+    "ville": "Bailly Romainvilliers",
+    "identifiant_eleve": 70961296712523120000
+  },
+  {
+    "rue": "11 Rue Carnot",
+    "code_postal": 94270,
+    "ville": "Le Kremlin Bicêtre",
+    "identifiant_eleve": 19685218001371468000
+  },
+  {
+    "rue": "5 rue Fays",
+    "code_postal": 94160,
+    "ville": "SAINT MANDE",
+    "identifiant_eleve": 51751074153029470000
+  },
+  {
+    "rue": "1 rue de l'internationale",
+    "code_postal": 91002,
+    "ville": "EVRY CEDEX",
+    "identifiant_eleve": 41314649104793610000
+  },
+  {
+    "rue": "101 rue de la Gaudinière",
+    "code_postal": 44300,
+    "ville": "NANTES",
+    "identifiant_eleve": 85613209119759910000
+  },
+  {
+    "rue": "110 rue de Grenelle",
+    "code_postal": 75007,
+    "ville": "PARIS",
+    "identifiant_eleve": 21321757220161073000
+  },
+  {
+    "rue": "24 Rue KLEBER",
+    "code_postal": 93400,
+    "ville": "SAINT OUEN",
+    "identifiant_eleve": 83875572173115210000
+  },
+  {
+    "rue": "59 avenue Joffre",
+    "code_postal": 93800,
+    "ville": "Epinay sur Seine",
+    "identifiant_eleve": 22853527904929270000
+  },
+  {
+    "rue": "6 rue Toulouse Lautrec",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 49140067991614415000
+  },
+  {
+    "rue": "22 rue Barrault",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 12600744470822314000
+  },
+  {
+    "rue": "45 rue Sedaine",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 63169849840937690000
+  },
+  {
+    "rue": "66, avenue des Champs Elysées",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 45641390148671720000
+  },
+  {
+    "rue": "6 rue Toulouse Lautrec",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 60996245838995325000
+  },
+  {
+    "rue": "5 rue lespagnol",
+    "code_postal": 75020,
+    "ville": "Paris",
+    "identifiant_eleve": 17563742917426991000
+  },
+  {
+    "rue": "31 rue Poissonnière",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 22267896034844890000
+  },
+  {
+    "rue": "2 av du VALLON",
+    "code_postal": 78450,
+    "ville": "CHAVENAY",
+    "identifiant_eleve": 61201309423566560000
+  },
+  {
+    "rue": "3 Rue de l'Arcade",
+    "code_postal": 77400,
+    "ville": "Lagny sur Marne",
+    "identifiant_eleve": 61365870754515894000
+  },
+  {
+    "rue": "102 AV HENRI DUNANT",
+    "code_postal": 91200,
+    "ville": "ATIS MONS",
+    "identifiant_eleve": 77485567419352240000
+  },
+  {
+    "rue": "10 boulevard Gandon Texier",
+    "code_postal": 95100,
+    "ville": "Argenteuil",
+    "identifiant_eleve": 10334251559226149000
+  },
+  {
+    "rue": "5 rue Pleyel''Le Calliope''",
+    "code_postal": 93528,
+    "ville": "SAINT-DENIS CEDEX",
+    "identifiant_eleve": 49837529178577080000
+  },
+  {
+    "rue": "149 Rue Ordener",
+    "code_postal": 75018,
+    "ville": "Paris",
+    "identifiant_eleve": 66537534518811570000
+  },
+  {
+    "rue": 114,
+    "code_postal": 94380,
+    "ville": "Bonneuil sur Marne",
+    "identifiant_eleve": 56692997453572235000
+  },
+  {
+    "rue": "25 Rue Notre Dame de Nazareth",
+    "code_postal": 75003,
+    "ville": "Paris",
+    "identifiant_eleve": 13691562945825989000
+  },
+  {
+    "rue": "44 rue du Maréchal de Lattre de Tassigny",
+    "code_postal": 91100,
+    "ville": "CORBEIL ESSONNES",
+    "identifiant_eleve": 18515301336194310000
+  },
+  {
+    "rue": "18 RUE MARCHAND ET FERAOUN",
+    "code_postal": 91700,
+    "ville": "FLEURY MEROGIS",
+    "identifiant_eleve": 93149076640745140000
+  },
+  {
+    "rue": "100 avenue des Champs Elysées",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 34968535572997560000
+  },
+  {
+    "rue": "218 avenue Jean Jaurès",
+    "code_postal": 75019,
+    "ville": "Paris",
+    "identifiant_eleve": 91569812887697740000
+  },
+  {
+    "rue": "55, rue de la Boétie",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 71713936346996244000
+  },
+  {
+    "rue": "97 Avenue Jean Mermoz",
+    "code_postal": 93120,
+    "ville": "La Courneuve",
+    "identifiant_eleve": 29199790803453360000
+  },
+  {
+    "rue": "16 Bis avenue Prieur de la Côte d'Or",
+    "code_postal": 94114,
+    "ville": "ARCUEIL CX",
+    "identifiant_eleve": 87363523897410580000
+  },
+  {
+    "rue": "18 rue Gutenberg - Parc d'activités La Marinière",
+    "code_postal": 91070,
+    "ville": "Bondoufle",
+    "identifiant_eleve": 61818154382126710000
+  },
+  {
+    "rue": "91, rue du Faubourg Saint-Honoré",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 88846513485497380000
+  },
+  {
+    "rue": "91, rue du Faubourg Saint-Honoré",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 99974132985637320000
+  },
+  {
+    "rue": "12, rue Villiot",
+    "code_postal": 75012,
+    "ville": "Paris",
+    "identifiant_eleve": 90579932169719460000
+  },
+  {
+    "rue": "20 rue d'Athènes",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 20778433541315270000
+  },
+  {
+    "rue": "5-7 rue saint Fiacre",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 19390098548928504000
+  },
+  {
+    "rue": "4 rue du marché Saint Honoré",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 57313264127603425000
+  },
+  {
+    "rue": "35 avenue Philippe Auguste",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 22890107087763170000
+  },
+  {
+    "rue": "218 avenue Jean Jaurès",
+    "code_postal": 75019,
+    "ville": "PARIS",
+    "identifiant_eleve": 45833023953387320000
+  },
+  {
+    "rue": "17 chaussée de la Muette",
+    "code_postal": 75016,
+    "ville": "Paris",
+    "identifiant_eleve": 37814893305439190000
+  },
+  {
+    "rue": "2 rue des Cévennes",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 75889108419907100000
+  },
+  {
+    "rue": "1 Rue des Sources",
+    "code_postal": 93420,
+    "ville": "Villepinte",
+    "identifiant_eleve": 55113270829969890000
+  },
+  {
+    "rue": "51, ALLEE DES PINS",
+    "code_postal": 91700,
+    "ville": "SAINTE GENEVIEVE DES BOIS",
+    "identifiant_eleve": 86648131221395880000
+  },
+  {
+    "rue": "34 rue de Picpus",
+    "code_postal": 75012,
+    "ville": "PARIS",
+    "identifiant_eleve": 24963794416106300000
+  },
+  {
+    "rue": "26, avenue Winston Churchill",
+    "code_postal": "LOUVIERS",
+    "ville": 27400,
+    "identifiant_eleve": 28769820926462718000
+  },
+  {
+    "rue": "85 rue de Maubeuge",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 99535731676939960000
+  },
+  {
+    "rue": "72 Rue d'Hauteville",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 93399257754067010000
+  },
+  {
+    "rue": "5 rue Eugène Freyssinet",
+    "code_postal": 75013,
+    "ville": "Paris",
+    "identifiant_eleve": 87576750577726620000
+  },
+  {
+    "rue": "1 RUE DE LA TUILERIE",
+    "code_postal": 94440,
+    "ville": "Marolles en Brie",
+    "identifiant_eleve": 38192995859024140000
+  },
+  {
+    "rue": "58, rue du Louvre",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 53844889929424010000
+  },
+  {
+    "rue": "189 rue d'Aubervilliers",
+    "code_postal": 75586,
+    "ville": "paris",
+    "identifiant_eleve": 79752694696856860000
+  },
+  {
+    "rue": "38 rue de Villiers",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS-PERRET",
+    "identifiant_eleve": 95990043196242380000
+  },
+  {
+    "rue": "13 RUE PAUL BERT",
+    "code_postal": 94700,
+    "ville": "Maisons Alfort",
+    "identifiant_eleve": 25868416732567660000
+  },
+  {
+    "rue": "2 place du colonel Fabien",
+    "code_postal": 75019,
+    "ville": "PARIS",
+    "identifiant_eleve": 58629579250433480000
+  },
+  {
+    "rue": "63 Avenue du Centenaire",
+    "code_postal": 94210,
+    "ville": "La Varenne Saint Hilaire",
+    "identifiant_eleve": 95604165262064420000
+  },
+  {
+    "rue": "21 rue du Montparnasse",
+    "code_postal": 75006,
+    "ville": "PARIS",
+    "identifiant_eleve": 25357936977992606000
+  },
+  {
+    "rue": "34 grande Rue De Randan",
+    "code_postal": 42110,
+    "ville": "FEURS",
+    "identifiant_eleve": 54202763838931500000
+  },
+  {
+    "rue": "23 Boulevard du Général Leclerc",
+    "code_postal": 77300,
+    "ville": "Fontainebleau",
+    "identifiant_eleve": 2335069165853895000
+  },
+  {
+    "rue": "1 BOULEVARD DE VALMY",
+    "code_postal": 59560,
+    "ville": "VILLENEUVE D'ASCQ",
+    "identifiant_eleve": 25243880168204960000
+  },
+  {
+    "rue": "24 Avenue Raymond Poincaré",
+    "code_postal": 75116,
+    "ville": "Paris",
+    "identifiant_eleve": 67244291902352654000
+  },
+  {
+    "rue": "14 rue Thorel",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 382584204963085800
+  },
+  {
+    "rue": "65 rue Ordener",
+    "code_postal": 75018,
+    "ville": "Paris",
+    "identifiant_eleve": 391780277037629700
+  },
+  {
+    "rue": "40 bis Rue du Faubourg poissonnière",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 57300716423458420000
+  },
+  {
+    "rue": "53 rue Nollet",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 34798339210382000000
+  },
+  {
+    "rue": "71, Place VAUBAN",
+    "code_postal": 34000,
+    "ville": "Montpellier",
+    "identifiant_eleve": 5570380434303646000
+  },
+  {
+    "rue": "94 rue de la Belle Etoile-PARIS NORD II",
+    "code_postal": 95700,
+    "ville": "ROISSY-EN-FRANCE",
+    "identifiant_eleve": 8984797314787407000
+  },
+  {
+    "rue": "249 avenue du Président Wilson",
+    "code_postal": 93210,
+    "ville": "La Plaine st Denis",
+    "identifiant_eleve": 22493058707898515000
+  },
+  {
+    "rue": "10 boulevard Marie et Pierre Curie",
+    "code_postal": 86360,
+    "ville": "CHASSENEUIL DU POITOU",
+    "identifiant_eleve": 49540414876495880000
+  },
+  {
+    "rue": "9 RUE DU COLONEL PIERRE AVIA",
+    "code_postal": 75015,
+    "ville": "Paris",
+    "identifiant_eleve": 37892945119967090000
+  },
+  {
+    "rue": "485 Route du Pin Montard",
+    "code_postal": "06410",
+    "ville": "Biot",
+    "identifiant_eleve": 49501515703051640000
+  },
+  {
+    "rue": "17 rue Dieu",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 74981965678326550000
+  },
+  {
+    "rue": "1 boulevard condorcet",
+    "code_postal": 95000,
+    "ville": "NEUVILLE SUR OISE",
+    "identifiant_eleve": 14403694126352366000
+  },
+  {
+    "rue": "58 avenue Hoche",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 35726194854480440000
+  },
+  {
+    "rue": "16 Avenue d'Ivry",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 93498833027234860000
+  },
+  {
+    "rue": "4, rue du Colonel Driant",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 64571562353924030000
+  },
+  {
+    "rue": "149 Avenue du Maine",
+    "code_postal": 75014,
+    "ville": "Paris",
+    "identifiant_eleve": 64186862708706490000
+  },
+  {
+    "rue": "15 rue Monsigny",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 29005987882122230000
+  },
+  {
+    "rue": "115-123 Avenue Charles de Gaulle",
+    "code_postal": 92200,
+    "ville": "Neuilly-Sur-Seine",
+    "identifiant_eleve": 66411209950278850000
+  },
+  {
+    "rue": "place du Quarteau",
+    "code_postal": 57000,
+    "ville": "Metz",
+    "identifiant_eleve": 61234162414027690000
+  },
+  {
+    "rue": "35 avenue Philippe Auguste",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 84239673820578020000
+  },
+  {
+    "rue": "58 rue Raymond Ridel",
+    "code_postal": 92250,
+    "ville": "La Garenne-Colombes",
+    "identifiant_eleve": 53861665828989190000
+  },
+  {
+    "rue": "6 Rue Jules Simon",
+    "code_postal": 92100,
+    "ville": "BOULOGNE BILLANCOURT",
+    "identifiant_eleve": 13887098111541123000
+  },
+  {
+    "rue": "4 Rue de la Collégiale",
+    "code_postal": 75005,
+    "ville": "PARIS",
+    "identifiant_eleve": 26384374241041910000
+  },
+  {
+    "rue": "34, Rue Perier",
+    "code_postal": 92120,
+    "ville": "Montrouge",
+    "identifiant_eleve": 50489364112915366000
+  },
+  {
+    "rue": "6 Rue de l'Elancèze",
+    "code_postal": 15800,
+    "ville": "Vic-sur-Cère",
+    "identifiant_eleve": 43961223624738390000
+  },
+  {
+    "rue": "5 RUE MONTESQUIEU",
+    "code_postal": 92600,
+    "ville": "Asnières Sur Seine",
+    "identifiant_eleve": 74495588185313920000
+  },
+  {
+    "rue": "CHEMIN DE BEAUREPAIRE",
+    "code_postal": 91410,
+    "ville": "DOURDAN",
+    "identifiant_eleve": 36547770958772142000
+  },
+  {
+    "rue": "87 Rue de Richelieu",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 13467231060580393000
+  },
+  {
+    "rue": "67B RUE DE LA GLACIÈRE",
+    "code_postal": 91180,
+    "ville": "SAINT-GERMAIN-LÈS-ARPAJON",
+    "identifiant_eleve": 96879405645601330000
+  },
+  {
+    "rue": "2 place aux étoiles",
+    "code_postal": 93210,
+    "ville": "St-Denis",
+    "identifiant_eleve": 40604879472012270000
+  },
+  {
+    "rue": "6 Boulevard des Capucines",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 3188544364948582000
+  },
+  {
+    "rue": "118 Avenue Achille Peretti",
+    "code_postal": 92521,
+    "ville": "Neuilly-Sur-Seine",
+    "identifiant_eleve": 52660774093135045000
+  },
+  {
+    "rue": "32-36 rue de Bellevue",
+    "code_postal": 92100,
+    "ville": "Boulogne Billancourt",
+    "identifiant_eleve": 26611300791816266000
+  },
+  {
+    "rue": "8 AVENUE MONTAIGNE",
+    "code_postal": 93160,
+    "ville": "NOISY LE GRAND",
+    "identifiant_eleve": 81264456415581980000
+  },
+  {
+    "rue": "32 AVENUE KLEBER",
+    "code_postal": 92700,
+    "ville": "COLOMBES",
+    "identifiant_eleve": 51564043729480475000
+  },
+  {
+    "rue": "3 boulevard Jean Jaurès",
+    "code_postal": 93400,
+    "ville": "SAINT-OUEN",
+    "identifiant_eleve": 24735923110043345000
+  },
+  {
+    "rue": "Immeuble Odéon",
+    "code_postal": 77210,
+    "ville": "AVON",
+    "identifiant_eleve": 91950042595132300000
+  },
+  {
+    "rue": "54 avenue du Général Leclerc",
+    "code_postal": 92100,
+    "ville": "Boulogne",
+    "identifiant_eleve": 79054152356790580000
+  },
+  {
+    "rue": "10 rue de Tracy",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 35760767724346393000
+  },
+  {
+    "rue": "26 Ter Boulevard de l'Ouest",
+    "code_postal": 93340,
+    "ville": "Le Raincy",
+    "identifiant_eleve": 44016333655437910000
+  },
+  {
+    "rue": "Place de l'Agora",
+    "code_postal": 91000,
+    "ville": "EVRY-COURCOURONNES",
+    "identifiant_eleve": 78344405125172660000
+  },
+  {
+    "rue": "5 RUE D ESTIENNE D ORVES",
+    "code_postal": 92110,
+    "ville": "CLICHY",
+    "identifiant_eleve": 72409143620889900000
+  },
+  {
+    "rue": "2 Avenue Pasteur",
+    "code_postal": 94160,
+    "ville": "Saint-Mandé",
+    "identifiant_eleve": 74460755176160410000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 24098188128460136000
+  },
+  {
+    "rue": "13 RUE Ernest Renan",
+    "code_postal": 92723,
+    "ville": "NANTERRE",
+    "identifiant_eleve": 20003947249884850000
+  },
+  {
+    "rue": "129 rue de Turenne",
+    "code_postal": 75003,
+    "ville": "Paris",
+    "identifiant_eleve": 79741882732366200000
+  },
+  {
+    "rue": "18 RUE IRENEE CARRE",
+    "code_postal": "08000",
+    "ville": "Charleville-Mézières",
+    "identifiant_eleve": 69117286548463860000
+  },
+  {
+    "rue": "137 rue d'Aguesseau",
+    "code_postal": 92100,
+    "ville": "Boulogne Billancourt",
+    "identifiant_eleve": 20484533155222688000
+  },
+  {
+    "rue": "15 -19 RUE LEON GEFFROY BAT E1",
+    "code_postal": 94400,
+    "ville": "VITRY SUR SEINE",
+    "identifiant_eleve": 22721869029976773000
+  },
+  {
+    "rue": "45D Rue de Tournai",
+    "code_postal": 59000,
+    "ville": "Lille",
+    "identifiant_eleve": 35993881875447325000
+  },
+  {
+    "rue": "41 rue ybry",
+    "code_postal": 92200,
+    "ville": "Neuilly sur seine",
+    "identifiant_eleve": 4555954785778059300
+  },
+  {
+    "rue": "53 boulevard de la Reine",
+    "code_postal": 78000,
+    "ville": "Versailles",
+    "identifiant_eleve": 92421829331501330000
+  },
+  {
+    "rue": "14 Rue Milton",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 40735485905865110000
+  },
+  {
+    "rue": "90 Bd Pasteur",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 35406514287719610000
+  },
+  {
+    "rue": "19 rue georges mélies",
+    "code_postal": 95240,
+    "ville": "Cormeilles",
+    "identifiant_eleve": 65232101409431814000
+  },
+  {
+    "rue": "55 Rue des Francs Bourgeois",
+    "code_postal": 75004,
+    "ville": "Paris",
+    "identifiant_eleve": 68274780576017470000
+  },
+  {
+    "rue": "22 RUE ALEXANDRE DUMAS",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 77946681997128370000
+  },
+  {
+    "rue": "102 rue de Provence",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 31536580460766237000
+  },
+  {
+    "rue": "249 Avenue du président Wilson",
+    "code_postal": 93210,
+    "ville": "la plaine st denis",
+    "identifiant_eleve": 60409607020698610000
+  },
+  {
+    "rue": "88 Avenue Kleber",
+    "code_postal": 75016,
+    "ville": "Paris",
+    "identifiant_eleve": 55886151938484100000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 54335236427331390000
+  },
+  {
+    "rue": "30 RUE DES DAMES",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 45322674885757936000
+  },
+  {
+    "rue": "13 Rue Ernest Renan",
+    "code_postal": 92723,
+    "ville": "Nanterre",
+    "identifiant_eleve": 7360734219576798000
+  },
+  {
+    "rue": "20-22, rue Grange Dame Rose",
+    "code_postal": 78140,
+    "ville": "Vélizy-Villacoublay",
+    "identifiant_eleve": 95614290798083300000
+  },
+  {
+    "rue": "28 rue de Wolfenbuttel",
+    "code_postal": 92310,
+    "ville": "SEVRES",
+    "identifiant_eleve": 52749687596378230000
+  },
+  {
+    "rue": "102 avnue Aristide Briand",
+    "code_postal": 92220,
+    "ville": "BAGNEUX",
+    "identifiant_eleve": 10663588195906000000
+  },
+  {
+    "rue": "13 Rue Camille Desmoulins",
+    "code_postal": 92130,
+    "ville": "Issy les Moulineaux",
+    "identifiant_eleve": 74597369005643810000
+  },
+  {
+    "rue": "6 rue du Général Clergerie",
+    "code_postal": 75116,
+    "ville": "PARIS",
+    "identifiant_eleve": 36840383036448220000
+  },
+  {
+    "rue": "67 Rte Fusilles Résistance",
+    "code_postal": 92150,
+    "ville": "Suresnes",
+    "identifiant_eleve": 9737038482335920000
+  },
+  {
+    "rue": "2 PASSAGE PHILIPPE AUGUSTE",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 26469530517867130000
+  },
+  {
+    "rue": "67 Rte Fusilles Résistance",
+    "code_postal": 92150,
+    "ville": "Suresnes",
+    "identifiant_eleve": 67788524978618950000
+  },
+  {
+    "rue": "148 RUE DE L'UNIVERSITE",
+    "code_postal": 75007,
+    "ville": "Paris",
+    "identifiant_eleve": 38945876456051700000
+  },
+  {
+    "rue": "20 rue des Jardins",
+    "code_postal": 92600,
+    "ville": "Asnières-sur-Seine",
+    "identifiant_eleve": 95424230615875320000
+  },
+  {
+    "rue": "2 rue du Pont Colbert",
+    "code_postal": 78000,
+    "ville": "Versailles",
+    "identifiant_eleve": 14127160463384168000
+  },
+  {
+    "rue": "12 -14 rue Médéric",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 83228800888158140000
+  },
+  {
+    "rue": "11 allée de l’11rche",
+    "code_postal": 92032,
+    "ville": "Paris La Défense Cedex",
+    "identifiant_eleve": 6231821024392789000
+  },
+  {
+    "rue": "14 RUE JULES VANZUPPE",
+    "code_postal": 94200,
+    "ville": "IVRY-SUR-SEINE",
+    "identifiant_eleve": 40305769463919395000
+  },
+  {
+    "rue": "58 Avenue Edouard Vaillant",
+    "code_postal": 92100,
+    "ville": "Boulogne-Billancourt",
+    "identifiant_eleve": 12692826205975990000
+  },
+  {
+    "rue": "137 rue d’Aguesseau",
+    "code_postal": 92100,
+    "ville": "Boulogne",
+    "identifiant_eleve": 43552028307568300000
+  },
+  {
+    "rue": "427 route de Conflans",
+    "code_postal": 95220,
+    "ville": "HERBLAY",
+    "identifiant_eleve": 3086532433162279400
+  },
+  {
+    "rue": "72 RUE LOUIS BLANC",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 19961294282921630000
+  },
+  {
+    "rue": "6 RUE CONDORCET",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 65938892016331800000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 16193282821946614000
+  },
+  {
+    "rue": "1 avenue Pierre Brosselette",
+    "code_postal": 91380,
+    "ville": "CHILLY MAZARIN",
+    "identifiant_eleve": 63855994310861440000
+  },
+  {
+    "rue": "1 Place Samuel de Champlain",
+    "code_postal": 92400,
+    "ville": "COURBEVOIE",
+    "identifiant_eleve": 83326884388685790000
+  },
+  {
+    "rue": "5 RUE GUY MOQUET",
+    "code_postal": 91400,
+    "ville": "ORSAY",
+    "identifiant_eleve": 27633919241971257000
+  },
+  {
+    "rue": "10 Avenue du Stade de France",
+    "code_postal": 93210,
+    "ville": "Plaine-Saint Denis",
+    "identifiant_eleve": 10522485673327358000
+  },
+  {
+    "rue": "32 boulevard du port",
+    "code_postal": 95000,
+    "ville": "Paris",
+    "identifiant_eleve": 87260192491741180000
+  },
+  {
+    "rue": "16 rue Soyer",
+    "code_postal": 92200,
+    "ville": "Neuilly sur seine",
+    "identifiant_eleve": 39653308909934060000
+  },
+  {
+    "rue": "12 RUE DUHESME",
+    "code_postal": 75018,
+    "ville": "Paris",
+    "identifiant_eleve": 64313079214971840000
+  },
+  {
+    "rue": "22 rue Mozart",
+    "code_postal": 92110,
+    "ville": "Clichy Sur Seine",
+    "identifiant_eleve": 10193790855918365000
+  },
+  {
+    "rue": "106 Boulevard Haussmann",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 92346416603826550000
+  },
+  {
+    "rue": "84 rue de Paris",
+    "code_postal": 92110,
+    "ville": "CLICHY",
+    "identifiant_eleve": 49398191544539410000
+  },
+  {
+    "rue": "41 Rue Edouard le Corbusier",
+    "code_postal": 94000,
+    "ville": "Créteil",
+    "identifiant_eleve": 73480293059824570000
+  },
+  {
+    "rue": "110 rue Réaumur",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 19965794596367740000
+  },
+  {
+    "rue": "4 avenue des Louvresses",
+    "code_postal": 92230,
+    "ville": "Gennevilliers",
+    "identifiant_eleve": 38380757756224350000
+  },
+  {
+    "rue": "ZAC du Grand Ban",
+    "code_postal": "08000",
+    "ville": "LA FRANCHEVILLE",
+    "identifiant_eleve": 71438208069246116000
+  },
+  {
+    "rue": "40 Rue jean de la Fontaine",
+    "code_postal": 75016,
+    "ville": "Paris",
+    "identifiant_eleve": 57605777950607800000
+  },
+  {
+    "rue": "207 CHEMIN DE SAINT-HILAIRE",
+    "code_postal": 34160,
+    "ville": "SAINT-JEAN-DE-CORNIES",
+    "identifiant_eleve": 75071401281007060000
+  },
+  {
+    "rue": "11 Chemin de Bretagne",
+    "code_postal": 92130,
+    "ville": "ISSY LES MOULINEAUX",
+    "identifiant_eleve": 48857582163565170000
+  },
+  {
+    "rue": "32 AVENUE KLEBER",
+    "code_postal": 92700,
+    "ville": "COLOMBES",
+    "identifiant_eleve": 42831909246572090000
+  },
+  {
+    "rue": "7 RUE DES RESERVOIRS",
+    "code_postal": 78000,
+    "ville": "VERSAILLES",
+    "identifiant_eleve": 99436923332480750000
+  },
+  {
+    "rue": "18 BIS RUE MARECHAL LECLERC",
+    "code_postal": 28000,
+    "ville": "CHARTRES",
+    "identifiant_eleve": 40390375190726280000
+  },
+  {
+    "rue": "15 rue de la Banque",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 21138085375618290000
+  },
+  {
+    "rue": "4, rue Foucault",
+    "code_postal": 75116,
+    "ville": "PARIS",
+    "identifiant_eleve": 21470888135169073000
+  },
+  {
+    "rue": "30 Passage Choiseul",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 76075848584146420000
+  },
+  {
+    "rue": "7 rue de Madrid",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 83967716994260520000
+  },
+  {
+    "rue": "119 Rue du Temple",
+    "code_postal": 75003,
+    "ville": "Paris",
+    "identifiant_eleve": 78267606198749700000
+  },
+  {
+    "rue": "10 avenue Marc Sangnier",
+    "code_postal": 92390,
+    "ville": "Villeneuve-la-Garenne",
+    "identifiant_eleve": 8683378981650875000
+  },
+  {
+    "rue": "139 Rue d'ABOUKIR",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 4023656885614222000
+  },
+  {
+    "rue": "18/20 Rue du Faubourg du Temple",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 32631499961154640000
+  },
+  {
+    "rue": "80 rue Saint Lazare",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 49249570918703410000
+  },
+  {
+    "rue": "18 rue Volta",
+    "code_postal": 94140,
+    "ville": "Alfortville",
+    "identifiant_eleve": 72901890939065360000
+  },
+  {
+    "rue": "104 avenue de la Résistance",
+    "code_postal": 93100,
+    "ville": "Montreuil",
+    "identifiant_eleve": 17293926623225027000
+  },
+  {
+    "rue": "178 Bd Haussmann",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 32107669482685420000
+  },
+  {
+    "rue": "14/16 BOULEVARD GARIBALDI",
+    "code_postal": 92130,
+    "ville": "ISSY LES MOULINEAUX",
+    "identifiant_eleve": 90268636037693590000
+  },
+  {
+    "rue": "20 rue de la Ville l'Evêque",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 54994489946584960000
+  },
+  {
+    "rue": "134-140 rue d'aubervilliers",
+    "code_postal": 75019,
+    "ville": "PARIS",
+    "identifiant_eleve": 26600183856426713000
+  },
+  {
+    "rue": "21 Rue Camille Desmoulins",
+    "code_postal": 92130,
+    "ville": "ISSY LES MOULINEAUX",
+    "identifiant_eleve": 5183705308990245000
+  },
+  {
+    "rue": "1 rue Denise Buisson",
+    "code_postal": 93100,
+    "ville": "Montreuil",
+    "identifiant_eleve": 26434876259146940000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 66596086507362970000
+  },
+  {
+    "rue": "52 RUE DES VIGNES",
+    "code_postal": 75016,
+    "ville": "Paris",
+    "identifiant_eleve": 93645633057046770000
+  },
+  {
+    "rue": "176 AV CHARLES DE GAULLE",
+    "code_postal": 92200,
+    "ville": "NEUILLY SUR SEINE",
+    "identifiant_eleve": 39916194744187150000
+  },
+  {
+    "rue": "25 AVENUE D EYLAU",
+    "code_postal": 75116,
+    "ville": "PARIS",
+    "identifiant_eleve": 70557307416532720000
+  },
+  {
+    "rue": "4 rue MARCEAU",
+    "code_postal": 94200,
+    "ville": "IVRY SUR SEINE",
+    "identifiant_eleve": 65182099317050696
+  },
+  {
+    "rue": "30 Rue Keller",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 45503447947259994000
+  },
+  {
+    "rue": "48 rue de Neuilly",
+    "code_postal": 92110,
+    "ville": "CLICHY",
+    "identifiant_eleve": 1780338419706640600
+  },
+  {
+    "rue": "62 boulevard du Montparnasse",
+    "code_postal": 75015,
+    "ville": "Paris",
+    "identifiant_eleve": 62472177896021260000
+  },
+  {
+    "rue": "18 RUE DES BELLES FEUILLES",
+    "code_postal": 75016,
+    "ville": "PARIS",
+    "identifiant_eleve": 40119449149902310000
+  },
+  {
+    "rue": "27 RUE DU 74 EME REGIMENT D'INFANTERIE",
+    "code_postal": 76100,
+    "ville": "ROUEN",
+    "identifiant_eleve": 82344137076304380000
+  },
+  {
+    "rue": "16 RUE D'ARTOIS",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 49762984989789380000
+  },
+  {
+    "rue": "13, rue Raymond Losserand",
+    "code_postal": 75014,
+    "ville": "PARIS",
+    "identifiant_eleve": 8874434663907188000
+  },
+  {
+    "rue": "1, boulevard Archimède - Champs sur Marne",
+    "code_postal": 77444,
+    "ville": "MARNE LA VALLEE CEDEX 2",
+    "identifiant_eleve": 92314848295346010000
+  },
+  {
+    "rue": "34 Rue de Turbigo",
+    "code_postal": 75003,
+    "ville": "PARIS",
+    "identifiant_eleve": 32609820362205010000
+  },
+  {
+    "rue": "18 RUE FRANCIS DE PRESSENSE",
+    "code_postal": 93210,
+    "ville": "SAINT-DENIS LA PLAINE",
+    "identifiant_eleve": 50280704165543920000
+  },
+  {
+    "rue": "7B rue des Larris",
+    "code_postal": 92190,
+    "ville": "Meudon",
+    "identifiant_eleve": 18846074522140037000
+  },
+  {
+    "rue": "10 rue Marcel Dassault",
+    "code_postal": 78946,
+    "ville": "VELIZY VILLACOUBLAY",
+    "identifiant_eleve": 39954402309515400000
+  },
+  {
+    "rue": "16, PLACE DE L'IRIS",
+    "code_postal": 92400,
+    "ville": "Paris",
+    "identifiant_eleve": 92596118987375200000
+  },
+  {
+    "rue": "112 avenue Charles De Gaulle",
+    "code_postal": 92200,
+    "ville": "Neuilly sur seine",
+    "identifiant_eleve": 26197384899995130000
+  },
+  {
+    "rue": "41 rue de Gergovie",
+    "code_postal": 75014,
+    "ville": "PARIS",
+    "identifiant_eleve": 548211027336226240
+  },
+  {
+    "rue": "12 RUE THOMAS EDISON",
+    "code_postal": 77100,
+    "ville": "MEAUX",
+    "identifiant_eleve": 80832336471291640000
+  },
+  {
+    "rue": "417 Avenue du Béarn",
+    "code_postal": 78200,
+    "ville": "Buchelay",
+    "identifiant_eleve": 96104331117737030000
+  },
+  {
+    "rue": "17 bd Auguste Blanqui",
+    "code_postal": 75013,
+    "ville": "Paris",
+    "identifiant_eleve": 13109334848366430000
+  },
+  {
+    "rue": "8 rue de Candie",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 15432129582072758000
+  },
+  {
+    "rue": "2 rue Paul Vaillant Couturier",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS PERRET",
+    "identifiant_eleve": 46845993735728790000
+  },
+  {
+    "rue": "27 Avenue des Champs Elysées",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 23673301559454216000
+  },
+  {
+    "rue": "112 AVENUE DE PARIS - CS60002",
+    "code_postal": 94306,
+    "ville": "VINCENNES CEDEX",
+    "identifiant_eleve": 79029490385573660000
+  },
+  {
+    "rue": "96 rue Aristide Briand",
+    "code_postal": 92300,
+    "ville": "Levallois",
+    "identifiant_eleve": 90535864762014000000
+  },
+  {
+    "rue": "40 Avenue de Flandre",
+    "code_postal": 75019,
+    "ville": "Paris",
+    "identifiant_eleve": 51192275905174495000
+  },
+  {
+    "rue": "26 rue des Sabons",
+    "code_postal": 95360,
+    "ville": "Montmagny",
+    "identifiant_eleve": 13007389055000630000
+  },
+  {
+    "rue": "1 Cours VALMY",
+    "code_postal": 92800,
+    "ville": "Puteaux",
+    "identifiant_eleve": 1302579819744364500
+  },
+  {
+    "rue": "26 Ter Boulevard de l'Ouest",
+    "code_postal": 93340,
+    "ville": "Le Raincy",
+    "identifiant_eleve": 46091410663164690000
+  },
+  {
+    "rue": "42 Avenue Aristide Briand",
+    "code_postal": 92220,
+    "ville": "Bagneux",
+    "identifiant_eleve": 22540339238841490000
+  },
+  {
+    "rue": "93 AVENUE DE PARIS",
+    "code_postal": 91300,
+    "ville": "MASSY",
+    "identifiant_eleve": 48432446538291560000
+  },
+  {
+    "rue": "233 RUE SAINT HONORE",
+    "code_postal": 75001,
+    "ville": "PARIS",
+    "identifiant_eleve": 19285160113722552000
+  },
+  {
+    "rue": "142, Boulevard Diderot",
+    "code_postal": 75012,
+    "ville": "PARIS",
+    "identifiant_eleve": 43346838418225880000
+  },
+  {
+    "rue": "13 avenue Morane Saulnier - Bâtiment Le Chavez",
+    "code_postal": 78149,
+    "ville": "Vélizy-Villacoublay",
+    "identifiant_eleve": 75395830907153580000
+  },
+  {
+    "rue": "2-20 place des Vins de France",
+    "code_postal": 75012,
+    "ville": "Paris",
+    "identifiant_eleve": 23001312493992440000
+  },
+  {
+    "rue": "14 rue Touzet Gaillard",
+    "code_postal": 93400,
+    "ville": "Saint-Ouen",
+    "identifiant_eleve": 12660047602845428000
+  },
+  {
+    "rue": "57 Rue de Villiers",
+    "code_postal": 92576,
+    "ville": "Neuilly-Sur-Seine Cedex",
+    "identifiant_eleve": 3942168947590850000
+  },
+  {
+    "rue": "36, rue des Boulets",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 59660516092072985000
+  },
+  {
+    "rue": "32 boulevard gallieni",
+    "code_postal": 92130,
+    "ville": "issy-les-moulineaux",
+    "identifiant_eleve": 16243254828057088000
+  },
+  {
+    "rue": "35 rue d'Hauteville",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 91477397441745220000
+  },
+  {
+    "rue": "3 Rue Nationale",
+    "code_postal": 92100,
+    "ville": "Boulogne Billancourt",
+    "identifiant_eleve": 34004821746982384000
+  },
+  {
+    "rue": "27 avenue Carnot",
+    "code_postal": 91341,
+    "ville": "Massy Cedex",
+    "identifiant_eleve": 21248576951754440000
+  },
+  {
+    "rue": "10 AV JEAN JAURES",
+    "code_postal": 92120,
+    "ville": "Montrouge",
+    "identifiant_eleve": 60169928571916650000
+  },
+  {
+    "rue": "18, rue du Faubourg Poissonnière",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 14460176245728639000
+  },
+  {
+    "rue": "150 Rue de rivoli",
+    "code_postal": 75001,
+    "ville": "PARIS",
+    "identifiant_eleve": 55329253136626770000
+  },
+  {
+    "rue": "128 RUE DE LA BOETIE",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 16348947499208272000
+  },
+  {
+    "rue": "73 boulevard Haussmann",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 54940201330656750000
+  },
+  {
+    "rue": "",
+    "code_postal": 92032,
+    "ville": "PARIS LA DEFENSE CEDEX",
+    "identifiant_eleve": 35467946438960603000
+  },
+  {
+    "rue": "2 Place de la Bourse",
+    "code_postal": 33000,
+    "ville": "BORDEAUX",
+    "identifiant_eleve": 75971070765716640000
+  },
+  {
+    "rue": "32 Boulevard de la muette",
+    "code_postal": 95140,
+    "ville": "Garges-Lès-Gonesse",
+    "identifiant_eleve": 54267607050330750000
+  },
+  {
+    "rue": "10, ALLEE DES CASCADES",
+    "code_postal": 93420,
+    "ville": "VILLEPINTE",
+    "identifiant_eleve": 65059292134802940000
+  },
+  {
+    "rue": "4 Place d'Estienne d'Orves",
+    "code_postal": 75009,
+    "ville": "Paris",
+    "identifiant_eleve": 39153416461098710000
+  },
+  {
+    "rue": "119 RUE BELLIARD",
+    "code_postal": 75018,
+    "ville": "PARIS",
+    "identifiant_eleve": 48439212551617440000
+  },
+  {
+    "rue": "19-21 Avenue Morane Saulnier",
+    "code_postal": 78140,
+    "ville": "Velizy-Villacoublay",
+    "identifiant_eleve": 25096695469138276000
+  },
+  {
+    "rue": "5, Place Praslin",
+    "code_postal": 77000,
+    "ville": "MELUN",
+    "identifiant_eleve": 5246124432189827000
+  },
+  {
+    "rue": "42 rue du Faubourg Poissonnière",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 41880978549168290000
+  },
+  {
+    "rue": "80, avenue de l’Europe",
+    "code_postal": 92270,
+    "ville": "Bois-Colombes",
+    "identifiant_eleve": 30087476642354217000
+  },
+  {
+    "rue": "9 RUE DU CYGNE",
+    "code_postal": 75001,
+    "ville": "PARIS",
+    "identifiant_eleve": 38132588977832770000
+  },
+  {
+    "rue": "10 rue Camille Moke",
+    "code_postal": 93212,
+    "ville": "SAINT DENIS",
+    "identifiant_eleve": 48072269353347350000
+  },
+  {
+    "rue": "10 Rue Saint Georges",
+    "code_postal": 75009,
+    "ville": "Paris",
+    "identifiant_eleve": 92264304968245380000
+  },
+  {
+    "rue": "6 rue la Redoute",
+    "code_postal": 78043,
+    "ville": "Guyancourt cedex",
+    "identifiant_eleve": 83040155827157650000
+  },
+  {
+    "rue": "5, Place Praslin",
+    "code_postal": 77000,
+    "ville": "MELUN",
+    "identifiant_eleve": 2872887846153237000
+  },
+  {
+    "rue": "08 ALLEE EMILE ZOLA",
+    "code_postal": 95190,
+    "ville": "GOUSSAINVILLE",
+    "identifiant_eleve": 30907519463564915000
+  },
+  {
+    "rue": "48 Rue du chemin vert",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 49839620630293240000
+  },
+  {
+    "rue": "3 allée du colonel Fabien",
+    "code_postal": 93160,
+    "ville": "Noisy-Le-Grand",
+    "identifiant_eleve": 65209453873227020000
+  },
+  {
+    "rue": "10 Avenue de l'entreprise - Campus St-Christophe - Galilée 3",
+    "code_postal": 95800,
+    "ville": "Cergy St-Christophe",
+    "identifiant_eleve": 44635090377026940000
+  },
+  {
+    "rue": "58 RUE DE DANTZIG",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 9582855992280451000
+  },
+  {
+    "rue": "18 boulevard de la Paix",
+    "code_postal": 95800,
+    "ville": "CERGY",
+    "identifiant_eleve": 38226517995110860000
+  },
+  {
+    "rue": "4avenue du stade de France",
+    "code_postal": 93218,
+    "ville": "St Denis la Plaine",
+    "identifiant_eleve": 43200833039319950000
+  },
+  {
+    "rue": "50 BOULEVARD HAUSSMANN",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 41722754779755800000
+  },
+  {
+    "rue": "82 boulevard Beaumarchais",
+    "code_postal": 75011,
+    "ville": "Paris",
+    "identifiant_eleve": 4961481751105827000
+  },
+  {
+    "rue": "67 RUE SAINT JACQUES",
+    "code_postal": 75005,
+    "ville": "Paris",
+    "identifiant_eleve": 52346474211605060000
+  },
+  {
+    "rue": "25 Quai Gallieni",
+    "code_postal": 92150,
+    "ville": "Suresnes",
+    "identifiant_eleve": 46665507014142590000
+  },
+  {
+    "rue": "32-36 rue de bellevue",
+    "code_postal": 92100,
+    "ville": "boulogne-billancourt",
+    "identifiant_eleve": 94679624919898600000
+  },
+  {
+    "rue": "14 rue du Quatre Septembre",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 55537000375365860000
+  },
+  {
+    "rue": "5-13 boulevard de la République",
+    "code_postal": 92514,
+    "ville": "Boulogne-Billancourt",
+    "identifiant_eleve": 91569812887697740000
+  },
+  {
+    "rue": "20 Passage de la bonne graine",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 71721812862178170000
+  },
+  {
+    "rue": "1 Avenue Nelson MANDELA",
+    "code_postal": 94110,
+    "ville": "ARCUEIL",
+    "identifiant_eleve": 92630633340738040000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 7892845918713839000
+  },
+  {
+    "rue": "13 RUE CALMETTE ET GUERIN",
+    "code_postal": 78500,
+    "ville": "SARTROUVILLE",
+    "identifiant_eleve": 41825037398802300000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 27674577366447550000
+  },
+  {
+    "rue": "86 Rue Thiers",
+    "code_postal": 92100,
+    "ville": "BOULOGNE-BILLANCOURT",
+    "identifiant_eleve": 63125389314121640000
+  },
+  {
+    "rue": "8 RUE BLAISE PASCAL",
+    "code_postal": 92200,
+    "ville": "NEUILLY SUR SEINE",
+    "identifiant_eleve": 60539984894190210000
+  },
+  {
+    "rue": "17 RUE DU BOIS MERRAIN",
+    "code_postal": 28000,
+    "ville": "CHARTRES",
+    "identifiant_eleve": 92156637681075040000
+  },
+  {
+    "rue": "2 rue des Cévennes",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 46312013361763680000
+  },
+  {
+    "rue": "86, rue Lamarck",
+    "code_postal": 75018,
+    "ville": "PARIS",
+    "identifiant_eleve": 3991122888667160000
+  },
+  {
+    "rue": "52 RUE MOUFTARD",
+    "code_postal": 75005,
+    "ville": "PARIS",
+    "identifiant_eleve": 21339653455276990000
+  },
+  {
+    "rue": "16 Bis avenue Prieur de la Côte d'Or",
+    "code_postal": 94114,
+    "ville": "ARCUEIL CX",
+    "identifiant_eleve": 67211445092181220000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 49916291939826710000
+  },
+  {
+    "rue": "16, bis avenue prieur de la côte d'or - CS 40300",
+    "code_postal": 94114,
+    "ville": "",
+    "identifiant_eleve": 67211445092181220000
+  },
+  {
+    "rue": "40 Rue PASCAL",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 74743215551623840000
+  },
+  {
+    "rue": "1 RUE DU CHENIL",
+    "code_postal": 77183,
+    "ville": "CROISSY BEAUBOURG",
+    "identifiant_eleve": 67919377363966790000
+  },
+  {
+    "rue": "31 Avenue Jules Quentin",
+    "code_postal": 92016,
+    "ville": "NANTERRE CEDEX",
+    "identifiant_eleve": 15910383350324918000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 67190815274484250000
+  },
+  {
+    "rue": "1 place des Degrés - Tour Voltaire",
+    "code_postal": 92800,
+    "ville": "Puteaux",
+    "identifiant_eleve": 11321647301980130000
+  },
+  {
+    "rue": "67 RUE SAINT JACQUES",
+    "code_postal": 75005,
+    "ville": "Paris",
+    "identifiant_eleve": 94644100987118850000
+  },
+  {
+    "rue": "2 place aux Etoiles",
+    "code_postal": 93210,
+    "ville": "Saint Denis",
+    "identifiant_eleve": 79040090018254950000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 13865546200857328000
+  },
+  {
+    "rue": "CHAEMIN AUX BOEUFS",
+    "code_postal": 78121,
+    "ville": "CRESPIERES",
+    "identifiant_eleve": 56859647752552550000
+  },
+  {
+    "rue": "10 RUE DE PENTHIEVRE",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 61201309423566560000
+  },
+  {
+    "rue": "5 RUE EUGENE FREYSSINET (STATION F)",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 25208969453096366000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 57342011137922080000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 43045581087833555000
+  },
+  {
+    "rue": "6 rue d'armaillé",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 79614945217340230000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 41591000948199160000
+  },
+  {
+    "rue": "58 avenue Kleber",
+    "code_postal": 75016,
+    "ville": "PARIS",
+    "identifiant_eleve": 27917897037562114000
+  },
+  {
+    "rue": "85 RUE VICTOR HUGO",
+    "code_postal": 93100,
+    "ville": "LEVALLOIS -PERRET",
+    "identifiant_eleve": 55694499107517800000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 55665174159137060000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 64571562353924030000
+  },
+  {
+    "rue": "31 rue du Village",
+    "code_postal": 13006,
+    "ville": "Marseille",
+    "identifiant_eleve": 25629786008483578000
+  },
+  {
+    "rue": "9-13 rue de Beauce",
+    "code_postal": 78500,
+    "ville": "Sartrouville",
+    "identifiant_eleve": 91305797884969550000
+  },
+  {
+    "rue": "179 RUE DE LOURMEL",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 22100172099216990000
+  },
+  {
+    "rue": "11 Rue du Bastion",
+    "code_postal": 76600,
+    "ville": "LE HAVRE",
+    "identifiant_eleve": 69695949252914430000
+  },
+  {
+    "rue": "25 Quai Gallieni",
+    "code_postal": 92150,
+    "ville": "Suresnes",
+    "identifiant_eleve": 94978453338767300000
+  },
+  {
+    "rue": "28 rue Edouard Vaillant",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS PERRET",
+    "identifiant_eleve": 42779591246555144000
+  },
+  {
+    "rue": "4 PL DES BOUTONS D ARGENT",
+    "code_postal": 94000,
+    "ville": "CRETEIL",
+    "identifiant_eleve": 45606471485913850000
+  },
+  {
+    "rue": "5 RUE EUGENE FREYSSINET (STATION F)",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 22267896034844890000
+  },
+  {
+    "rue": "3 rue Mazagran",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 70754138329549350000
+  },
+  {
+    "rue": "06 RUE DE NICE",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 76152420799877780000
+  },
+  {
+    "rue": "60 BOULEVARD DU MARECHAL JOFFRE",
+    "code_postal": 92340,
+    "ville": "BOURG LA REINE",
+    "identifiant_eleve": 90406257990826380000
+  },
+  {
+    "rue": "11 RUE ANTOINE LAVOISIER",
+    "code_postal": 77680,
+    "ville": "ROISSY-EN-BRIE",
+    "identifiant_eleve": 23556994666094130000
+  },
+  {
+    "rue": "134 AVENUE DE VILLIERS",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 67788524978618950000
+  },
+  {
+    "rue": "41 RUE PERIER",
+    "code_postal": 92120,
+    "ville": "MONTROUGE",
+    "identifiant_eleve": 51112529196903850000
+  },
+  {
+    "rue": "4 QUAI DE LA REPUBLIQUE",
+    "code_postal": 94410,
+    "ville": "SAINT MAURICE",
+    "identifiant_eleve": 354412479698959400
+  },
+  {
+    "rue": "3 Sente des Dorées",
+    "code_postal": 75019,
+    "ville": "PARIS",
+    "identifiant_eleve": 78304132487195700000
+  },
+  {
+    "rue": "102 RUE REAUMUR",
+    "code_postal": 75002,
+    "ville": "paris",
+    "identifiant_eleve": 74059087431716860000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 68757927963884446000
+  },
+  {
+    "rue": "10 RUE DU FAUBOURG POISSONNIERE",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 39089551602430160000
+  },
+  {
+    "rue": "14 Rue Montmartre",
+    "code_postal": 75001,
+    "ville": "PARIS",
+    "identifiant_eleve": 95043089281674560000
+  },
+  {
+    "rue": "25 Rue Notre Dame de Nazareth",
+    "code_postal": 75003,
+    "ville": "Paris",
+    "identifiant_eleve": 29034111128049467000
+  },
+  {
+    "rue": "16 rue du Progrès",
+    "code_postal": 958770,
+    "ville": "Bezons",
+    "identifiant_eleve": 9737038482335920000
+  },
+  {
+    "rue": "5 RUE DES ITALIENS",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 38945876456051700000
+  },
+  {
+    "rue": "13 RUE D'UZES",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 19285160113722552000
+  },
+  {
+    "rue": "25 rue Notre Dame des Victoires",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 78805249472103330000
+  },
+  {
+    "rue": "2/10 boulevard de l'Europe",
+    "code_postal": 78300,
+    "ville": "POISSY CEDEX 9",
+    "identifiant_eleve": 88786022930271420000
+  },
+  {
+    "rue": "40 bis rue du Faubourg Poissonnière",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 46091410663164690000
+  },
+  {
+    "rue": "53 bis rue de la Roquette",
+    "code_postal": 75011,
+    "ville": "PARIS",
+    "identifiant_eleve": 26279240750942810000
+  },
+  {
+    "rue": "41 RUE CAMILLE DES MOULINS",
+    "code_postal": 93130,
+    "ville": "ISSY MOULINEAUX",
+    "identifiant_eleve": 48116565728752060000
+  },
+  {
+    "rue": "21 bd de la muette",
+    "code_postal": 95140,
+    "ville": "Garges les Gonesse",
+    "identifiant_eleve": 75583351555753560000
+  },
+  {
+    "rue": "32 rue Louis Ampère",
+    "code_postal": 93330,
+    "ville": "Neuilly sur Marne",
+    "identifiant_eleve": 14466751228864082000
+  },
+  {
+    "rue": "75 RUE AMSTERDAM",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 64828644736139800000
+  },
+  {
+    "rue": "207 RUE DE BERCY",
+    "code_postal": 75012,
+    "ville": "PARIS",
+    "identifiant_eleve": 39597292284057920000
+  },
+  {
+    "rue": "2 RUE MARIA DERAISMES",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 8425273495742874000
+  },
+  {
+    "rue": "58 RUE GAMBETTA",
+    "code_postal": 92240,
+    "ville": "MALAKOFF",
+    "identifiant_eleve": 34646924983621394000
+  },
+  {
+    "rue": "5 rue Quentin Bauchart",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 67244291902352654000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 4750843428945645000
+  },
+  {
+    "rue": "46 RUE RAFFET",
+    "code_postal": 75016,
+    "ville": "PARIS",
+    "identifiant_eleve": 73615754115978180000
+  },
+  {
+    "rue": "10 RUE DE LANCRY",
+    "code_postal": 75010,
+    "ville": "PARIS",
+    "identifiant_eleve": 71859497585013680000
+  },
+  {
+    "rue": "42 RUE WASHINGTON",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 54761441388731870000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 57605777950607800000
+  },
+  {
+    "rue": "43-45 rue Charles Delescluze",
+    "code_postal": 93170,
+    "ville": "Bagnolet",
+    "identifiant_eleve": 24010642932231266000
+  },
+  {
+    "rue": "110 AV JEAN JAURES",
+    "code_postal": 92100,
+    "ville": "BOULOGNE BILLANCOURT",
+    "identifiant_eleve": 13619654446058584000
+  },
+  {
+    "rue": "33 boulevard du Port",
+    "code_postal": 95011,
+    "ville": "CERGY PONTOISE Cedex",
+    "identifiant_eleve": 68140440386589704000
+  },
+  {
+    "rue": "15 rue de bretagne",
+    "code_postal": 92140,
+    "ville": "CLAMART",
+    "identifiant_eleve": 74597369005643810000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 336433026273084700
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 21786078427222143000
+  },
+  {
+    "rue": "1, boulevard Archimède - Champs sur Marne",
+    "code_postal": 77444,
+    "ville": "MARNE LA VALLEE CEDEX 2",
+    "identifiant_eleve": 30760380135488676000
+  },
+  {
+    "rue": "3 rue Vergniaud",
+    "code_postal": 75013,
+    "ville": "PARIS",
+    "identifiant_eleve": 77325213199596300000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 31718570000112062000
+  },
+  {
+    "rue": "3 rue Rollon",
+    "code_postal": 76000,
+    "ville": "Rouen",
+    "identifiant_eleve": 9553229100469142000
+  },
+  {
+    "rue": "5, rue de Breteuil, Batiment B",
+    "code_postal": 94100,
+    "ville": "Saint Maur des Fossés",
+    "identifiant_eleve": 29586815952267740000
+  },
+  {
+    "rue": "3 RUE VOLNEY",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 40305769463919395000
+  },
+  {
+    "rue": "",
+    "code_postal": 92032,
+    "ville": "PARIS LA DEFENSE CEDEX",
+    "identifiant_eleve": 79553097421733660000
+  },
+  {
+    "rue": "17, rue Auguste Gervais",
+    "code_postal": 92130,
+    "ville": "ISSY-les- MOULINEAUX",
+    "identifiant_eleve": 50206997414411020000
+  },
+  {
+    "rue": "3 RUE D'UZES",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 38193585274173555000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 38651113334336520000
+  },
+  {
+    "rue": "8 Avenue de l’Europe",
+    "code_postal": 92310,
+    "ville": "SEVRES",
+    "identifiant_eleve": 57605777950607800000
+  },
+  {
+    "rue": "13 rue Henri Barbusse",
+    "code_postal": 92624,
+    "ville": "GENNEVILLIERS",
+    "identifiant_eleve": 9484002796974576000
+  },
+  {
+    "rue": "70-80 Avenue du Général De Gaulle",
+    "code_postal": 92800,
+    "ville": "PUTEAUX",
+    "identifiant_eleve": 13630128329564056000
+  },
+  {
+    "rue": "123 rue Saint Lazard",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 94199528892092300000
+  },
+  {
+    "rue": "16 rue des Jeûneurs",
+    "code_postal": 75002,
+    "ville": "Paris",
+    "identifiant_eleve": 31533559739646820000
+  },
+  {
+    "rue": "33, rue traversière",
+    "code_postal": 92100,
+    "ville": "Boulogne-Billancourt",
+    "identifiant_eleve": 33633850749434143000
+  },
+  {
+    "rue": "77 boulevard Saint Jacques",
+    "code_postal": 75014,
+    "ville": "Paris",
+    "identifiant_eleve": 67656706382825000000
+  },
+  {
+    "rue": "80 boulevard du Mandinet",
+    "code_postal": 77432,
+    "ville": "MARNE-LA-VALLEE CEDEX 2",
+    "identifiant_eleve": 6828733263334426000
+  },
+  {
+    "rue": "44 avenue Georges Pompidou",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS-PERRET",
+    "identifiant_eleve": 65269933962005185000
+  },
+  {
+    "rue": "124 rue Réaumur",
+    "code_postal": 75002,
+    "ville": "PARIS",
+    "identifiant_eleve": 59123420977384940000
+  },
+  {
+    "rue": "154 RUE ANATOLE FRANCE",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS PERRET",
+    "identifiant_eleve": 62022396781060104000
+  },
+  {
+    "rue": "38 rue Lantiez",
+    "code_postal": 75017,
+    "ville": "Paris",
+    "identifiant_eleve": 72670945898241410000
+  },
+  {
+    "rue": "1, avenue François Mitterrand",
+    "code_postal": 93212,
+    "ville": "La Plaine Saint-Denis",
+    "identifiant_eleve": 64289128895040640000
+  },
+  {
+    "rue": "92 avenue des Ternes",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 37825599519017394000
+  },
+  {
+    "rue": "1 Parvis de la Défense",
+    "code_postal": 92044,
+    "ville": "Paris La Défense",
+    "identifiant_eleve": 9715074391521323000
+  },
+  {
+    "rue": "125 AVENUE DU BOIS DE LA PIE",
+    "code_postal": 95921,
+    "ville": "ROISSY-EN FRANCE",
+    "identifiant_eleve": 96028964687486450000
+  },
+  {
+    "rue": "11 rue de Bourseul",
+    "code_postal": 75015,
+    "ville": "PARIS",
+    "identifiant_eleve": 52472340215444380000
+  },
+  {
+    "rue": "40 route de Vezelay",
+    "code_postal": 89460,
+    "ville": "BAZARNES",
+    "identifiant_eleve": 38005169981757850000
+  },
+  {
+    "rue": "14 rue Bergère",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 26895409161363230000
+  },
+  {
+    "rue": "1 Rue de la République",
+    "code_postal": 93200,
+    "ville": "SAINT-DENIS",
+    "identifiant_eleve": 6672671808738058000
+  },
+  {
+    "rue": "11BIS 13 RUE DU COLISEE",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 51247843077209710000
+  },
+  {
+    "rue": "45 RUE LA FAYETTE",
+    "code_postal": 75009,
+    "ville": "PARIS",
+    "identifiant_eleve": 9361270895805098000
+  },
+  {
+    "rue": "105 RUE JULES GUESDE",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS PERRET",
+    "identifiant_eleve": 91027963500235280000
+  },
+  {
+    "rue": "9 rue des Bateaux Lavoirs",
+    "code_postal": 94200,
+    "ville": "IVRY SUR SEINE",
+    "identifiant_eleve": 90782620115967030000
+  },
+  {
+    "rue": "",
+    "code_postal": 76140,
+    "ville": "Le Petit Quevilly",
+    "identifiant_eleve": 57172548683860090000
+  },
+  {
+    "rue": "63 rue Caulaincourt",
+    "code_postal": 75018,
+    "ville": "PARIS",
+    "identifiant_eleve": 32627191533663350000
+  },
+  {
+    "rue": "11 rue Théophile GAUTIER",
+    "code_postal": 92120,
+    "ville": "MONTROUGE",
+    "identifiant_eleve": 58700811154502420000
+  },
+  {
+    "rue": "64 RUE VIOLET",
+    "code_postal": 75015,
+    "ville": "Paris",
+    "identifiant_eleve": 11321647301980130000
+  },
+  {
+    "rue": "12 rue anselme",
+    "code_postal": 93400,
+    "ville": "Saint-ouen-sur-seine",
+    "identifiant_eleve": 9916983723625110000
+  },
+  {
+    "rue": "1 Rue de la Vrillière",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 98165710581290350000
+  },
+  {
+    "rue": "128 Rue La Boetie",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 53714345594475820000
+  },
+  {
+    "rue": "96 RUE EDOURAD VAILLANT",
+    "code_postal": 92300,
+    "ville": "LEVALLOIS",
+    "identifiant_eleve": 44088589549331320000
+  },
+  {
+    "rue": "39 Rue des maronites",
+    "code_postal": 75020,
+    "ville": "Paris",
+    "identifiant_eleve": 69491819732366385000
+  },
+  {
+    "rue": "5, place de la Bataille de Stalingrad",
+    "code_postal": 75010,
+    "ville": "Paris",
+    "identifiant_eleve": 25429716618393490000
+  },
+  {
+    "rue": "9 RUE DES BATEAUX LAVOIRS",
+    "code_postal": 94200,
+    "ville": "IVRY-SUR-SEINE",
+    "identifiant_eleve": 98762263381785210000
+  },
+  {
+    "rue": "92 avenue des Ternes",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 67936952632105026000
+  },
+  {
+    "rue": "157 Boulevard MacDonald",
+    "code_postal": 75019,
+    "ville": "Paris",
+    "identifiant_eleve": 53248374074036404000
+  },
+  {
+    "rue": "89 avenue Charles de Gaulle",
+    "code_postal": 92575,
+    "ville": "Neuilly Sur Seine",
+    "identifiant_eleve": 73239379189063524000
+  },
+  {
+    "rue": "5 avenue de la liberté",
+    "code_postal": 94220,
+    "ville": "Charenton-le-pont",
+    "identifiant_eleve": 69627756714307090000
+  },
+  {
+    "rue": "18 Rue de Saisset",
+    "code_postal": 92120,
+    "ville": "Montrouge",
+    "identifiant_eleve": 69194138440778424000
+  },
+  {
+    "rue": "11 boulevard de Sébastopol",
+    "code_postal": 75001,
+    "ville": "Paris",
+    "identifiant_eleve": 46783841651725380000
+  },
+  {
+    "rue": "4 place des Vosges",
+    "code_postal": 92400,
+    "ville": "COURBEVOIE",
+    "identifiant_eleve": 21321757220161073000
+  },
+  {
+    "rue": "71 RUE DE Saussure",
+    "code_postal": 75017,
+    "ville": "PARIS",
+    "identifiant_eleve": 86858554588632090000
+  },
+  {
+    "rue": "18 Pl des Nymphéas",
+    "code_postal": 93420,
+    "ville": "Villepinte",
+    "identifiant_eleve": 6390476640423399000
+  },
+  {
+    "rue": "2 Place de La Défense",
+    "code_postal": 92300,
+    "ville": "Paris La Défense",
+    "identifiant_eleve": 14728769443857578000
+  },
+  {
+    "rue": "1 rue Denise Buisson",
+    "code_postal": 93100,
+    "ville": "Montreuil",
+    "identifiant_eleve": 80238420939307430000
+  },
+  {
+    "rue": "6 Rue de Rome",
+    "code_postal": 75008,
+    "ville": "Paris",
+    "identifiant_eleve": 12589082538164386000
+  },
+  {
+    "rue": "1 Place Samuel de Champlain",
+    "code_postal": 92400,
+    "ville": "Courbevoie",
+    "identifiant_eleve": 15342307442817057000
+  },
+  {
+    "rue": "7 SQUARE DU ROULE",
+    "code_postal": 75008,
+    "ville": "PARIS",
+    "identifiant_eleve": 26246050264566354000
+  },
+  {
+    "rue": "37 RUE VAUVENARGUES",
+    "code_postal": 75018,
+    "ville": "PARIS",
+    "identifiant_eleve": 7087384805353218000
+  },
+  {
+    "rue": "",
+    "code_postal": "",
+    "ville": "",
+    "identifiant_eleve": 26246050264566354000
+  }
+] 
+
+const classes = [
+  {"id_classe": 98081545639010400000},
+  {"id_classe": 51077828107119900000},
+  {"id_classe": 90568348866444300000},
+  {"id_classe": 86650652074839200000},
+  {"id_classe": 99060373198634700000},
+  {"id_classe": 58879951876123900000},
+  {"id_classe": 98092601728449700000},
+  {"id_classe": 82733987601004600000},
+  {"id_classe": 69535891505307500000},
+  {"id_classe": 26050628059066300000},
+  {"id_classe": 64057565100483500000},
+  {"id_classe": 6696762360876300000},
+  {"id_classe": 67800944844426400000},
+  {"id_classe": 15321017723655400000},
+  {"id_classe": 57583613331577900000},
+  {"id_classe": 94152767477457700000},
+  {"id_classe": 65285059947142000000},
+  {"id_classe": 68987116330916500000},
+  {"id_classe": 49273758189005500000},
+  {"id_classe": 42186206852701400000},
+  {"id_classe": 32009191079552500000},
+  {"id_classe": 18865941934474100000},
+  {"id_classe": 67418612832536900000},
+  {"id_classe": 19363701795804900000}
+]
+
+const students = [
     {
       "etat": "étudiant",
       "rue": "la vente",
@@ -6,7 +2838,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Mouliherne",
       "id_eleve": 87826311370296670000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -15,7 +2847,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 79741882732366200000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -24,7 +2856,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 24735923110043345000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -33,7 +2865,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLENEUVE SAINT GEORGES",
       "id_eleve": 31307338585697540000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -42,7 +2874,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Mesnil Saint Denis",
       "id_eleve": 93399257754067010000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -51,7 +2883,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Poitiers",
       "id_eleve": 49540414876495880000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -60,7 +2892,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 13467231060580393000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -69,7 +2901,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aulney sous Bois",
       "id_eleve": 13117806652652392000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -78,7 +2910,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Les Pavillons Sous Bois",
       "id_eleve": 89647935755662440000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -87,7 +2919,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Touquet-Paris-Plage",
       "id_eleve": 35497860760628814000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -96,7 +2928,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Franconville",
       "id_eleve": 86858554588632090000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -105,7 +2937,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chelles",
       "id_eleve": 9995429226166315000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -114,7 +2946,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LA VILLE DU BOIS",
       "id_eleve": 91181079968733800000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -123,7 +2955,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gasny",
       "id_eleve": 37212120078591840000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -132,7 +2964,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Meslay-du-Maine",
       "id_eleve": 24947232307270824000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -141,7 +2973,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bourg la Reine",
       "id_eleve": 24996403752225796000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -150,7 +2982,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 61005030738821860000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -159,7 +2991,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Beynes",
       "id_eleve": 7758987254862532000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -168,7 +3000,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "St Maurice de Lignon",
       "id_eleve": 80475427232142690000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -177,7 +3009,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 53844889929424010000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -186,7 +3018,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 84497724553595270000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -195,7 +3027,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 7019703329228560000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -204,7 +3036,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 50654720485042880000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -213,7 +3045,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Pontault-Combault",
       "id_eleve": 53770876165349780000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -222,7 +3054,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Golbey",
       "id_eleve": 82749518599524650000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -231,7 +3063,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 42142684995356730000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -240,7 +3072,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villemomble",
       "id_eleve": 48608857980095890000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -249,7 +3081,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VELIZY VILLACOUBLAY",
       "id_eleve": 27810218631029318000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -258,7 +3090,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Versailles",
       "id_eleve": 37052383115290930000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -267,7 +3099,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Courbevoie",
       "id_eleve": 15342307442817057000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -276,7 +3108,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "caen",
       "id_eleve": 44016333655437910000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -285,7 +3117,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 63292494007418540000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -294,7 +3126,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTCERF",
       "id_eleve": 63988532933340210000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -303,7 +3135,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GARCHES",
       "id_eleve": 45167402822956150000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -312,7 +3144,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LEVALLOIS PERRET",
       "id_eleve": 96879405645601330000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -321,7 +3153,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières sur Seine",
       "id_eleve": 72286693680987120000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -330,7 +3162,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LEVALLOIS PERRET",
       "id_eleve": 16375307146683980000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -339,7 +3171,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Marseille",
       "id_eleve": 49643089644903690000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -348,7 +3180,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 66756598363986960000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -357,7 +3189,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le marin",
       "id_eleve": 1953404783432997600,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -366,7 +3198,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ECULLY",
       "id_eleve": 382584204963085800,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -375,7 +3207,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières sur Seine",
       "id_eleve": 1780338419706640600,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -384,7 +3216,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MARY SUR MARNE",
       "id_eleve": 98120170076380770000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -393,7 +3225,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 40525172374868115000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -402,7 +3234,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Romainville",
       "id_eleve": 55902835803964900000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -411,7 +3243,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint maurice",
       "id_eleve": 92346416603826550000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -420,7 +3252,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Courbevoie",
       "id_eleve": 92596118987375200000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -429,7 +3261,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "neuilly sur seine",
       "id_eleve": 67485323856276640000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -438,7 +3270,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MAISONS ALFORT",
       "id_eleve": 29973965324313297000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -447,7 +3279,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "REILHAC",
       "id_eleve": 10663588195906000000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -456,7 +3288,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 4555954785778059300,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "étudiant",
@@ -465,7 +3297,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nangis",
       "id_eleve": 34185699101729923000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -474,7 +3306,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "EPINAY-SUR-ORGE",
       "id_eleve": 23001312493992440000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -483,7 +3315,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Santa Maria Siche",
       "id_eleve": 37825599519017394000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -492,7 +3324,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Livry-Gargan",
       "id_eleve": 26895409161363230000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -501,7 +3333,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nanteuil-les-Meaux",
       "id_eleve": 7278174627933647000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -510,7 +3342,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ANTONY",
       "id_eleve": 43961223624738390000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -519,7 +3351,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ARGENTEUIL",
       "id_eleve": 95604165262064420000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -528,7 +3360,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 79752694696856860000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -537,7 +3369,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chantilly",
       "id_eleve": 97244283125426750000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -546,7 +3378,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cachan",
       "id_eleve": 34030729958205180000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -555,7 +3387,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Grand Quevilly",
       "id_eleve": 88428762496723660000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -564,7 +3396,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villebon sur Yvette",
       "id_eleve": 7360734219576798000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -573,7 +3405,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Raedersdorf",
       "id_eleve": 86053233422128120000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -582,7 +3414,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Santa Maria Siche",
       "id_eleve": 67936952632105026000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -591,7 +3423,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boulzicourt",
       "id_eleve": 71438208069246116000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -600,7 +3432,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boulogne Billancourt",
       "id_eleve": 57062989285181250000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -609,7 +3441,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 94199528892092300000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -618,7 +3450,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "sartrouville",
       "id_eleve": 21321757220161073000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -627,7 +3459,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MAISONS ALFORT",
       "id_eleve": 195908493114776580,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -636,7 +3468,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 91569812887697740000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -645,7 +3477,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Les Lilas",
       "id_eleve": 9715074391521323000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -654,7 +3486,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Ouen L'Aumone",
       "id_eleve": 39693847638323960000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -663,7 +3495,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "WISSOUS",
       "id_eleve": 38005169981757850000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -672,7 +3504,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Offranville",
       "id_eleve": 82344137076304380000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -681,7 +3513,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ferrières-en-Brie",
       "id_eleve": 9361270895805098000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "étudiant",
@@ -690,7 +3522,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NEUILLY SUR MARNE",
       "id_eleve": 60331064452098064000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -699,7 +3531,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy le Grand",
       "id_eleve": 78304132487195700000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -708,7 +3540,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "AUBERVILLIERS",
       "id_eleve": 50489364112915366000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -717,7 +3549,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BALARUC LES BAINS",
       "id_eleve": 68484745348372450000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -726,7 +3558,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boissy-Saint-Léger",
       "id_eleve": 42299268300743050000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -735,7 +3567,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Brunoy",
       "id_eleve": 40119449149902310000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -744,7 +3576,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 12600744470822314000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "étudiant",
@@ -753,7 +3585,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CLAMART",
       "id_eleve": 92557352440625790000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "alternant",
@@ -762,7 +3594,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BEZONS",
       "id_eleve": 13865546200857328000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -771,7 +3603,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 87576750577726620000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -780,7 +3612,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Tunis",
       "id_eleve": 60308113329512760000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -789,7 +3621,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "EAUBONNE",
       "id_eleve": 93557743512479660000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -798,7 +3630,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CORMEILLES EN PARISIS",
       "id_eleve": 14403694126352366000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -807,7 +3639,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy-le-Grand",
       "id_eleve": 65269933962005185000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -816,7 +3648,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ANTONY",
       "id_eleve": 76377383438989540000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -825,7 +3657,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "FOLLAINVILLE-DENNEMONT",
       "id_eleve": 93520346698727110000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -834,7 +3666,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bures-sur-Yvette",
       "id_eleve": 53248374074036404000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -843,7 +3675,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "HERBLAY SUR SEINE",
       "id_eleve": 6828733263334426000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -852,7 +3684,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 71695518148438660000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -861,7 +3693,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ormesson-sur-Marne",
       "id_eleve": 33756268425348610000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -870,7 +3702,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "THIAIS",
       "id_eleve": 34601298778974070000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -879,7 +3711,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy le grand",
       "id_eleve": 78169825214975800000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -888,7 +3720,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Germain les Arpajon",
       "id_eleve": 20339210651904205000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -897,7 +3729,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 56764762506615970000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -906,7 +3738,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montigny-Les - Cormeilles",
       "id_eleve": 95990043196242380000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -915,7 +3747,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "OISSERY",
       "id_eleve": 38192995859024140000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -924,7 +3756,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LIVRY GARGAN",
       "id_eleve": 64289128895040640000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -933,7 +3765,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gournay sur Marne",
       "id_eleve": 35549987959533810000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -942,7 +3774,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "L'isle-Adam",
       "id_eleve": 41239707429071110000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -951,7 +3783,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montmorency",
       "id_eleve": 40604879472012270000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -960,7 +3792,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Toulouse",
       "id_eleve": 57300716423458420000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -969,7 +3801,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CLICHY",
       "id_eleve": 83326884388685790000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -978,7 +3810,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Giremoutiers",
       "id_eleve": 25868416732567660000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -987,7 +3819,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 46394643399524475000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -996,7 +3828,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Triel-sur-Seine",
       "id_eleve": 49762984989789380000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1005,7 +3837,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Guyancourt",
       "id_eleve": 83270912579561130000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -1014,7 +3846,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 58629579250433480000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1023,7 +3855,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 91027963500235280000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1032,7 +3864,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 51247843077209710000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1041,7 +3873,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 99535731676939960000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1050,7 +3882,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 11798372902801170000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1059,7 +3891,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VELIZY VILLACOUBLAY",
       "id_eleve": 41314649104793610000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1068,7 +3900,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 43221412926402390000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1077,7 +3909,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Coutevroult",
       "id_eleve": 5008237194551413000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -1086,7 +3918,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VINCENNES",
       "id_eleve": 29199790803453360000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1095,7 +3927,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Quentin",
       "id_eleve": 59123420977384940000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1104,7 +3936,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MOELAN SUR MER",
       "id_eleve": 86686976081785750000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1113,7 +3945,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 55537000375365860000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -1122,7 +3954,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Issou",
       "id_eleve": 10334251559226149000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1131,7 +3963,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Valence en Brie",
       "id_eleve": 20360463202426700000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -1140,7 +3972,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Petit-Quevilly",
       "id_eleve": 57172548683860090000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1149,7 +3981,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "St Gilles",
       "id_eleve": 27064032727024124000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1158,7 +3990,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOULOGNE-BILLANCOURT",
       "id_eleve": 46312013361763680000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1167,7 +3999,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "saint fargeau",
       "id_eleve": 63169849840937690000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1176,7 +4008,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHOISY LE ROI",
       "id_eleve": 58700811154502420000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1185,7 +4017,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 99974132985637320000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -1194,7 +4026,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vitry sur Seine",
       "id_eleve": 54335236427331390000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1203,7 +4035,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 11321647301980130000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1212,7 +4044,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Cloud",
       "id_eleve": 28926910207294750000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1221,7 +4053,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VITRY SUR SEINE",
       "id_eleve": 22267896034844890000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1230,7 +4062,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vitry-Chatillon",
       "id_eleve": 24963794416106300000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1239,7 +4071,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 71721812862178170000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1248,7 +4080,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bondy",
       "id_eleve": 76075848584146420000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -1257,7 +4089,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LOUVECIENNES",
       "id_eleve": 45042541047981834000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -1266,7 +4098,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boussy-Saint-Antoine",
       "id_eleve": 77485567419352240000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -1275,7 +4107,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Malakoff",
       "id_eleve": 94157964796974040000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -1284,7 +4116,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Dammarie-les-Lys",
       "id_eleve": 66537534518811570000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1293,7 +4125,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gennevilliers",
       "id_eleve": 92219878865827330000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1302,7 +4134,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montévrain",
       "id_eleve": 57313264127603425000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1311,7 +4143,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rosny sous bois",
       "id_eleve": 14466751228864082000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1320,7 +4152,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LEVALLOIS PERRET",
       "id_eleve": 37892945119967090000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -1329,7 +4161,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nanteuil les Meaux",
       "id_eleve": 50206997414411020000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1338,7 +4170,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 15432129582072758000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1347,7 +4179,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 30087476642354217000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -1356,7 +4188,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NEUILLY SUR MARNE",
       "id_eleve": 46091410663164690000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -1365,7 +4197,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 73991840322913730000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -1374,7 +4206,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Amiens",
       "id_eleve": 98165710581290350000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1383,7 +4215,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Epinay sur seine",
       "id_eleve": 49501515703051640000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "étudiant",
@@ -1392,7 +4224,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Dammarie les lys",
       "id_eleve": 48363297163273180000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -1401,7 +4233,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Lamentin - Martinique",
       "id_eleve": 74981965678326550000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -1410,7 +4242,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nanteuil-les-Meaux",
       "id_eleve": 1302579819744364500,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -1419,7 +4251,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ROSNY SOUS BOIS",
       "id_eleve": 23673301559454216000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1428,7 +4260,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sarcelles",
       "id_eleve": 59660516092072985000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1437,7 +4269,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boulogne-Billancourt",
       "id_eleve": 72670945898241410000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "étudiant",
@@ -1446,7 +4278,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 89199609650635440000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1455,7 +4287,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 59532173927160240000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1464,7 +4296,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "cormeilles en parisis",
       "id_eleve": 35406514287719610000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "étudiant",
@@ -1473,7 +4305,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "HOUILLES",
       "id_eleve": 14887136368725434000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1482,7 +4314,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "La Celle Saint-Cloud",
       "id_eleve": 56859647752552550000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -1491,7 +4323,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VANVES",
       "id_eleve": 63560636237795530000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -1500,7 +4332,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champs sur Marne",
       "id_eleve": 21138085375618290000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1509,7 +4341,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOURG LA REINE",
       "id_eleve": 12869118002915640000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -1518,7 +4350,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Fresnes",
       "id_eleve": 99848830044143260000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1527,7 +4359,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 83228800888158140000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1536,7 +4368,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "EPINAY SUR SEINE",
       "id_eleve": 2233644027225784800,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1545,7 +4377,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LIVRY GARGAN",
       "id_eleve": 39089551602430160000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1554,7 +4386,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Malakoff",
       "id_eleve": 46845993735728790000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -1563,7 +4395,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 63383231724519380000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1572,7 +4404,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gonesse",
       "id_eleve": 30907519463564915000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1581,7 +4413,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bussy Saint Georges",
       "id_eleve": 13194324187713220000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1590,7 +4422,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 25629786008483578000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -1599,7 +4431,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rosny- Sous-Bois",
       "id_eleve": 81264456415581980000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1608,7 +4440,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 61344668885061610000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1617,7 +4449,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Neuilly Plaisance",
       "id_eleve": 66596086507362970000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1626,7 +4458,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "la ville du bois",
       "id_eleve": 36547770958772142000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1635,7 +4467,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NOGENT -SUR -MARNE",
       "id_eleve": 51564043729480475000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -1644,7 +4476,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boulogne Billancourt",
       "id_eleve": 75395830907153580000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -1653,7 +4485,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 78267606198749700000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1662,7 +4494,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLIERS SAINT FREDERIC",
       "id_eleve": 55336132551481840000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1671,7 +4503,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GROSLAY",
       "id_eleve": 74059087431716860000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1680,7 +4512,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Fontenay sous bois",
       "id_eleve": 40735485905865110000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1689,7 +4521,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vincennes",
       "id_eleve": 8134029301108021000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -1698,7 +4530,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy-le-Grand",
       "id_eleve": 29356531641634927000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1707,7 +4539,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Penchard",
       "id_eleve": 84169804896097500000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1716,7 +4548,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vincennes",
       "id_eleve": 21786078427222143000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1725,7 +4557,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Meaux",
       "id_eleve": 27674577366447550000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -1734,7 +4566,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Choisy le roi",
       "id_eleve": 40305769463919395000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -1743,7 +4575,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "QUNICY VOISINS",
       "id_eleve": 60271182171874390000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1752,7 +4584,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières sur Seine",
       "id_eleve": 41722754779755800000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1761,7 +4593,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "draveil",
       "id_eleve": 43234577922010990000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -1770,7 +4602,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rozay-en-Brie",
       "id_eleve": 10613801884450902000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -1779,7 +4611,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montévrain",
       "id_eleve": 70961296712523120000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1788,7 +4620,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Fresnes",
       "id_eleve": 65097896615833340000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1797,7 +4629,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rouen",
       "id_eleve": 54284819918344310000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1806,7 +4638,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chevry-Cossigny",
       "id_eleve": 35726194854480440000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -1815,7 +4647,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Thibault Des Vignes",
       "id_eleve": 17563742917426991000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1824,7 +4656,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Melun",
       "id_eleve": 76506621233689230000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -1833,7 +4665,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Elancourt",
       "id_eleve": 71713936346996244000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1842,7 +4674,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "TOURS",
       "id_eleve": 34798339210382000000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -1851,7 +4683,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Puteaux",
       "id_eleve": 36301347147575255000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1860,7 +4692,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 25357936977992606000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -1869,7 +4701,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "EMERAINVILLE",
       "id_eleve": 74495588185313920000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1878,7 +4710,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 31533559739646820000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1887,7 +4719,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champs sur marne",
       "id_eleve": 49899945203878980000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1896,7 +4728,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Melun",
       "id_eleve": 37814893305439190000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -1905,7 +4737,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Perchay",
       "id_eleve": 96028964687486450000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1914,7 +4746,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NANTERRE",
       "id_eleve": 49360502843154960000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1923,7 +4755,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 86648131221395880000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -1932,7 +4764,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ivry-sur-seine",
       "id_eleve": 90782620115967030000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1941,7 +4773,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "FRESNES",
       "id_eleve": 13630128329564056000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -1950,7 +4782,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Boulogne Billancourt",
       "id_eleve": 87363523897410580000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "étudiant",
@@ -1959,7 +4791,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "COMPIEGNE",
       "id_eleve": 24546034546449924000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -1968,7 +4800,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aulnay-sous-bois",
       "id_eleve": 70635871929395880000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -1977,7 +4809,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 55886151938484100000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1986,7 +4818,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Blanc-Mesnil",
       "id_eleve": 2335069165853895000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -1995,7 +4827,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LILLE",
       "id_eleve": 25243880168204960000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2004,7 +4836,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "TOULOUSE",
       "id_eleve": 69491819732366385000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2013,7 +4845,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Romainville",
       "id_eleve": 67244291902352654000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -2022,7 +4854,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bussy Saint Georges",
       "id_eleve": 54761441388731870000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2031,7 +4863,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 391780277037629700,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2040,7 +4872,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "DRANCY",
       "id_eleve": 34864028237868920000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2049,7 +4881,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Limay",
       "id_eleve": 83095100011495460000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2058,7 +4890,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 45833023953387320000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2067,7 +4899,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chennevières-sur-Marne",
       "id_eleve": 774198582026494100,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2076,7 +4908,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "JALLANS",
       "id_eleve": 49140067991614415000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2085,7 +4917,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLEJUIF",
       "id_eleve": 4847161888675215000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2094,7 +4926,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Arcueil",
       "id_eleve": 60167829651768025000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -2103,7 +4935,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOUSSY ST ANTOINE",
       "id_eleve": 60409607020698610000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -2112,7 +4944,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vanves",
       "id_eleve": 57342011137922080000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2121,7 +4953,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 92630633340738040000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2130,7 +4962,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 38945876456051700000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2139,7 +4971,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ASNIERES SUR SEINE",
       "id_eleve": 94644100987118850000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2148,7 +4980,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Meudon",
       "id_eleve": 26197384899995130000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -2157,7 +4989,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 64131760768564625000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2166,7 +4998,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villecresnes",
       "id_eleve": 67656706382825000000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2175,7 +5007,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 22813402451890200000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -2184,7 +5016,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CORMEILLE EN PARISIS",
       "id_eleve": 64571562353924030000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2193,7 +5025,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Brice-Sous forêt",
       "id_eleve": 69194138440778424000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -2202,7 +5034,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CESSON",
       "id_eleve": 67490983639330144000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -2211,7 +5043,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bazainville",
       "id_eleve": 57292078428620460000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -2220,7 +5052,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Levallois-Perret",
       "id_eleve": 6012122135798433000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -2229,7 +5061,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Jargeau",
       "id_eleve": 3991122888667160000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2238,7 +5070,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ASNIERES SUR SEINE",
       "id_eleve": 91305797884969550000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2247,7 +5079,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clichy la Garenne",
       "id_eleve": 65232101409431814000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2256,7 +5088,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ROSNY SUR SEINE",
       "id_eleve": 38651113334336520000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2265,7 +5097,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montpellier",
       "id_eleve": 5570380434303646000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2274,7 +5106,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Augea",
       "id_eleve": 93498833027234860000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2283,7 +5115,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PRECY SUR MARNE",
       "id_eleve": 8984797314787407000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2292,7 +5124,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 22493058707898515000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -2301,7 +5133,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ferrières en Brie",
       "id_eleve": 76463230756256300000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -2310,7 +5142,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 28769820926462718000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2319,7 +5151,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Martin Boulogne",
       "id_eleve": 9660068104837777000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2328,7 +5160,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ris Orangis",
       "id_eleve": 61818154382126710000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2337,7 +5169,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Yutz",
       "id_eleve": 54202763838931500000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2346,7 +5178,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Neuilly Sur Seine",
       "id_eleve": 19390098548928504000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2355,7 +5187,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "JUVISY-SUR-ORGE",
       "id_eleve": 97083995381513420000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2364,7 +5196,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "herblay",
       "id_eleve": 53714345594475820000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2373,7 +5205,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villetaneuse",
       "id_eleve": 96377480511804870000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "étudiant",
@@ -2382,7 +5214,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chatillon",
       "id_eleve": 6328327157243719000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -2391,7 +5223,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "beaugency",
       "id_eleve": 5448745026156303000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2400,7 +5232,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villejuif",
       "id_eleve": 51751074153029470000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2409,7 +5241,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Dijon",
       "id_eleve": 75889108419907100000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2418,7 +5250,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "neaufle st martin",
       "id_eleve": 38322392901378600000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2427,7 +5259,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VARNEVILLE-BRETTEVILLE",
       "id_eleve": 7621532604675578000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2436,7 +5268,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rueil Malmaison",
       "id_eleve": 20778433541315270000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2445,7 +5277,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 68757927963884446000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2454,7 +5286,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 21443085703041606000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2463,7 +5295,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champigny-sur-Marne",
       "id_eleve": 42323301635904004000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2472,7 +5304,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MEAUX",
       "id_eleve": 13691562945825989000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2481,7 +5313,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Ouen L'Aumône",
       "id_eleve": 55113270829969890000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -2490,7 +5322,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "COURBEVOIE",
       "id_eleve": 29034111128049467000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -2499,7 +5331,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 62022396781060104000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2508,7 +5340,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 45503447947259994000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2517,7 +5349,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 83875572173115210000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2526,7 +5358,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Levallois-Perret",
       "id_eleve": 48439212551617440000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2535,7 +5367,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy-le-Grand",
       "id_eleve": 53861665828989190000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2544,7 +5376,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Denis",
       "id_eleve": 26611300791816266000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2553,7 +5385,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Argenteuil",
       "id_eleve": 64828644736139800000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -2562,7 +5394,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ERMONT",
       "id_eleve": 83813303628153240000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2571,7 +5403,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Pontault Combault",
       "id_eleve": 19012528689108160000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -2580,7 +5412,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Les lucs sur boulogne",
       "id_eleve": 84239673820578020000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2589,7 +5421,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "cachan",
       "id_eleve": 90579932169719460000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "étudiant",
@@ -2598,7 +5430,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LONGPONT SUR ORGE",
       "id_eleve": 35648488330052910000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -2607,7 +5439,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gagny",
       "id_eleve": 85075512994217820000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2616,7 +5448,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noyon",
       "id_eleve": 9484002796974576000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2625,7 +5457,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villejuif",
       "id_eleve": 38132588977832770000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2634,7 +5466,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "bourg la reine",
       "id_eleve": 60996245838995325000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "étudiant",
@@ -2643,7 +5475,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GAGNY",
       "id_eleve": 2769379759836342000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -2652,7 +5484,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHAMPS SUR PARNE",
       "id_eleve": 354412479698959400,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2661,7 +5493,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 78805249472103330000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2670,7 +5502,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Blanc-Mesnil",
       "id_eleve": 58592030319882250000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2679,7 +5511,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "HERBLAY",
       "id_eleve": 73239379189063524000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2688,7 +5520,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 13887098111541123000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2697,7 +5529,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LA GARENNE-COLOMBES",
       "id_eleve": 64313079214971840000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -2706,7 +5538,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rosny sous bois",
       "id_eleve": 26167035309978680000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -2715,7 +5547,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 14728769443857578000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2724,7 +5556,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 15910383350324918000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2733,7 +5565,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montmorency",
       "id_eleve": 33633850749434143000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -2742,7 +5574,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montbeliard",
       "id_eleve": 42135696774650405000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2751,7 +5583,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LOUVRES",
       "id_eleve": 48072269353347350000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -2760,7 +5592,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montfermeil",
       "id_eleve": 49837529178577080000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2769,7 +5601,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "bruyeres sur oise",
       "id_eleve": 44088589549331320000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2778,7 +5610,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 83040155827157650000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2787,7 +5619,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOIS COLOMBES",
       "id_eleve": 65490840287640730000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2796,7 +5628,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Maisons-Alfort",
       "id_eleve": 88846513485497380000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -2805,7 +5637,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NANTERRE",
       "id_eleve": 35993881875447325000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -2814,7 +5646,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nouakchott (Mauritanie)",
       "id_eleve": 59436204758727650000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "étudiant",
@@ -2823,7 +5655,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SCEAUX",
       "id_eleve": 80866403248123250000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2832,7 +5664,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Torcy",
       "id_eleve": 45481411855789800000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2841,7 +5673,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BRUGUIERES",
       "id_eleve": 26434876259146940000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -2850,7 +5682,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gentilly",
       "id_eleve": 27917897037562114000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -2859,7 +5691,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nanterre",
       "id_eleve": 10974891839097430000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2868,7 +5700,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "FRANCONVILLE",
       "id_eleve": 12589082538164386000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -2877,7 +5709,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bobigny",
       "id_eleve": 94978453338767300000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "étudiant",
@@ -2886,7 +5718,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ANTONY",
       "id_eleve": 21055326488270414000,
-      "id_classe": "18 865 941 934 474 100 000"
+      "id_classe": 18865941934474100000
     },
     {
       "etat": "étudiant",
@@ -2895,7 +5727,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CROISSY SUR SEINE",
       "id_eleve": 13327551630806788000,
-      "id_classe": "67 418 612 832 536 900 000"
+      "id_classe": 67418612832536900000
     },
     {
       "etat": "étudiant",
@@ -2904,7 +5736,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "La Varenne St-Hilaire",
       "id_eleve": 31401931092741407000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -2913,7 +5745,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Mery-sur-Oise",
       "id_eleve": 91390576310496940000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -2922,7 +5754,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chevilly-Larue",
       "id_eleve": 19685218001371468000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -2931,7 +5763,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ezanville",
       "id_eleve": 16069107185632168000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -2940,7 +5772,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montpellier",
       "id_eleve": 9684262198142150000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -2949,7 +5781,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 21248576951754440000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -2958,7 +5790,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "St Germain en Laye",
       "id_eleve": 72901890939065360000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -2967,7 +5799,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VANVES",
       "id_eleve": 93149076640745140000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "étudiant",
@@ -2976,7 +5808,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villeneuve saint georges",
       "id_eleve": 82666357034802150000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -2985,7 +5817,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE BOURGET",
       "id_eleve": 42322300673237250000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -2994,7 +5826,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 32572855865621254000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -3003,7 +5835,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gonesse",
       "id_eleve": 177788624721783800,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -3012,7 +5844,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 68264230577539146000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -3021,7 +5853,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clairoix",
       "id_eleve": 34968535572997560000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -3030,7 +5862,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chelles",
       "id_eleve": 74460755176160410000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -3039,7 +5871,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières sur seine",
       "id_eleve": 22853527904929270000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -3048,7 +5880,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 9916983723625110000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -3057,7 +5889,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Pontault-Combault",
       "id_eleve": 43200833039319950000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -3066,7 +5898,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BRUNOY",
       "id_eleve": 7754850364822015000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -3075,7 +5907,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "La Ferté-Alais",
       "id_eleve": 5246124432189827000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3084,7 +5916,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Drancy",
       "id_eleve": 54267607050330750000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3093,7 +5925,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTIGNY LES CORMEILLES",
       "id_eleve": 64186862708706490000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -3102,7 +5934,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LOME",
       "id_eleve": 95988991468578960000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -3111,7 +5943,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOULOGNE-BILLANCOURT",
       "id_eleve": 45641390148671720000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "étudiant",
@@ -3120,7 +5952,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 21217690700699795000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -3129,7 +5961,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 60175168467847710000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -3138,7 +5970,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 82186909372879100000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3147,7 +5979,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "THORIGNY SUR MARNE",
       "id_eleve": 70525228687068420000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3156,7 +5988,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE PERREUX SUR MARNE",
       "id_eleve": 26381202996983750000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "alternant",
@@ -3165,7 +5997,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "FONTENAY LE FLEURY",
       "id_eleve": 64230963505297120000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3174,7 +6006,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "RENNES",
       "id_eleve": 26384374241041910000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -3183,7 +6015,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montereau Fault Yonne",
       "id_eleve": 15038475346552222000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3192,7 +6024,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "POISSY",
       "id_eleve": 34262645013868024000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3201,7 +6033,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ASNIERES SUR SEINE",
       "id_eleve": 69836008706000830000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3210,7 +6042,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHAMPIGNY SUR MARNE",
       "id_eleve": 91430353873175820000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3219,7 +6051,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chennevières-sur-marne",
       "id_eleve": 39929226130612855000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "étudiant",
@@ -3228,7 +6060,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villiers sur Marne",
       "id_eleve": 53816164340701270000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -3237,7 +6069,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy le Sec",
       "id_eleve": 6390476640423399000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -3246,7 +6078,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 47924313828345300000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -3255,7 +6087,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Plessi Robinson",
       "id_eleve": 61201309423566560000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3264,7 +6096,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 9737038482335920000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -3273,7 +6105,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Briis-sous-Forges",
       "id_eleve": 32627191533663350000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -3282,7 +6114,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Blain",
       "id_eleve": 38193585274173555000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -3291,7 +6123,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rouilly st loup",
       "id_eleve": 17293926623225027000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -3300,7 +6132,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 3188544364948582000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3309,7 +6141,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bry-Sur-Marne",
       "id_eleve": 98762263381785210000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -3318,7 +6150,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 52660774093135045000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -3327,7 +6159,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NOISY LE GRAND",
       "id_eleve": 669155058696758800,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -3336,7 +6168,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 49156062220344250000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -3345,7 +6177,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VITRY SUR SEINE",
       "id_eleve": 84042150380434400000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -3354,7 +6186,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "JOUY LE MOUTIER",
       "id_eleve": 6672671808738058000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -3363,7 +6195,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ALFORTVILLE",
       "id_eleve": 8537713407260369000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -3372,7 +6204,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 3337901493688442000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3381,7 +6213,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chatenay Malabry",
       "id_eleve": 63125389314121640000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3390,7 +6222,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Carrières sur seine",
       "id_eleve": 13109334848366430000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -3399,7 +6231,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 72409143620889900000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -3408,7 +6240,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT GEERMAIN EN LAYE",
       "id_eleve": 29711075627910402000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -3417,7 +6249,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 66411209950278850000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3426,7 +6258,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "maisons alfort",
       "id_eleve": 52346474211605060000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3435,7 +6267,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sainte Geneviève des Bois",
       "id_eleve": 79054152356790580000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -3444,7 +6276,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BAGNOLET",
       "id_eleve": 65379380850386820000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -3453,7 +6285,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 25632165228341826000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -3462,7 +6294,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CRETEIL",
       "id_eleve": 47430453461943090000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -3471,7 +6303,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Neuilly sur Seine",
       "id_eleve": 35760767724346393000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3480,7 +6312,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "st mandé",
       "id_eleve": 22721869029976773000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -3489,7 +6321,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bagneux",
       "id_eleve": 66136382566033180000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -3498,7 +6330,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CACHAN",
       "id_eleve": 25429716618393490000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3507,7 +6339,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LA COURNEUVE",
       "id_eleve": 78344405125172660000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -3516,7 +6348,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montévrain",
       "id_eleve": 91950042595132300000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -3525,7 +6357,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Savigny Sur Orge",
       "id_eleve": 42779591246555144000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -3534,7 +6366,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Soisy-sous-Montmorency",
       "id_eleve": 49398191544539410000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3543,7 +6375,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Orly",
       "id_eleve": 79553097421733660000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -3552,7 +6384,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SERMOISE SUR LOIRE",
       "id_eleve": 57539917673379455000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -3561,7 +6393,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS 13 / PARIS",
       "id_eleve": 75638722665587300000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -3570,7 +6402,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NANTERRE",
       "id_eleve": 86716606107186140000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -3579,7 +6411,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières-Sur-Seine",
       "id_eleve": 45322674885757936000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3588,7 +6420,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rennes",
       "id_eleve": 24098188128460136000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -3597,7 +6429,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Casablanca",
       "id_eleve": 2622933314360457000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -3606,7 +6438,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vernon",
       "id_eleve": 92257671757805910000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -3615,7 +6447,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Massy",
       "id_eleve": 69117286548463860000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3624,7 +6456,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BRUNOY",
       "id_eleve": 4961481751105827000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3633,7 +6465,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bonneuil sur Marne",
       "id_eleve": 91477397441745220000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3642,7 +6474,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bois d'Arcy",
       "id_eleve": 20003947249884850000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -3651,7 +6483,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 32145524695523885000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3660,7 +6492,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Créteil",
       "id_eleve": 55976235654392760000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3669,7 +6501,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rampillon",
       "id_eleve": 88898732029526950000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3678,7 +6510,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 33615254130389234000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3687,7 +6519,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Genevieve des Bois",
       "id_eleve": 71859497585013680000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -3696,7 +6528,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montigny Les Cormeilles",
       "id_eleve": 20774220744944894000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3705,7 +6537,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 16243254828057088000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -3714,7 +6546,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT MAXIMIN",
       "id_eleve": 43788979531934610000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "étudiant",
@@ -3723,7 +6555,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 42596971500719284000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "étudiant",
@@ -3732,7 +6564,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VANVES",
       "id_eleve": 37906112283280370000,
-      "id_classe": "67 418 612 832 536 900 000"
+      "id_classe": 67418612832536900000
     },
     {
       "etat": "alternant",
@@ -3741,7 +6573,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bois d'Arcy",
       "id_eleve": 92421829331501330000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -3750,7 +6582,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Persan",
       "id_eleve": 67211445092181220000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -3759,7 +6591,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Les clayes sous bois",
       "id_eleve": 20767534925300326000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -3768,7 +6600,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montreuil",
       "id_eleve": 68274780576017470000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3777,7 +6609,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GAGNY",
       "id_eleve": 31536580460766237000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3786,7 +6618,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sartrouville",
       "id_eleve": 46665507014142590000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -3795,7 +6627,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT OUEN",
       "id_eleve": 8425273495742874000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3804,7 +6636,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Lagny sur Marne",
       "id_eleve": 77946681997128370000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -3813,7 +6645,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Deuil La Barre",
       "id_eleve": 43045581087833555000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "étudiant",
@@ -3822,7 +6654,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MOUSSY LE NEUF",
       "id_eleve": 37671881149128250000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3831,7 +6663,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LIMEIL-BREVANNES",
       "id_eleve": 28648219632853960000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -3840,7 +6672,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT MARD",
       "id_eleve": 1335133475281226000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -3849,7 +6681,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champigny sur Marnes",
       "id_eleve": 36840383036448220000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3858,7 +6690,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "saint-cloud",
       "id_eleve": 95614290798083300000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -3867,7 +6699,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clamart",
       "id_eleve": 74597369005643810000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -3876,7 +6708,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 70557307416532720000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -3885,7 +6717,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Elancourt",
       "id_eleve": 52749687596378230000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -3894,7 +6726,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 54994489946584960000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -3903,7 +6735,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VITRY CHATILLON",
       "id_eleve": 25509617509685584000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -3912,7 +6744,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Morsang sur Orge",
       "id_eleve": 13228564410459134000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -3921,7 +6753,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "La Courneuve",
       "id_eleve": 26469530517867130000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -3930,7 +6762,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Morangis",
       "id_eleve": 24010642932231266000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -3939,7 +6771,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 67788524978618950000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "alternant",
@@ -3948,7 +6780,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubergenville",
       "id_eleve": 84210125141510100000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "étudiant",
@@ -3957,7 +6789,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 10593697572315530000,
-      "id_classe": "18 865 941 934 474 100 000"
+      "id_classe": 18865941934474100000
     },
     {
       "etat": "alternant",
@@ -3966,7 +6798,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Maurice",
       "id_eleve": 56692997453572235000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "étudiant",
@@ -3975,7 +6807,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Thibault Des Vignes",
       "id_eleve": 27093942649383723000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -3984,7 +6816,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Maisons-Alfort",
       "id_eleve": 20484533155222688000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -3993,7 +6825,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ELANCOURT",
       "id_eleve": 57322333232115550000,
-      "id_classe": "18 865 941 934 474 100 000"
+      "id_classe": 18865941934474100000
     },
     {
       "etat": "alternant",
@@ -4002,7 +6834,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 35467946438960603000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4011,7 +6843,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Maur des fossés",
       "id_eleve": 95424230615875320000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4020,7 +6852,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Meudon",
       "id_eleve": 90535864762014000000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -4029,7 +6861,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ST OUEN",
       "id_eleve": 86233209162556260000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4038,7 +6870,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 63855994310861440000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -4047,7 +6879,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villejuif",
       "id_eleve": 22540339238841490000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -4056,7 +6888,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Lagny sur Marne",
       "id_eleve": 61365870754515894000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "étudiant",
@@ -4065,7 +6897,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PUTEAUX",
       "id_eleve": 2062275592475403300,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -4074,7 +6906,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Coubert",
       "id_eleve": 5894290591845711000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -4083,7 +6915,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cormeilles en Vexin",
       "id_eleve": 87260192491741180000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4092,7 +6924,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 62134622433663110000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -4101,7 +6933,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cergy",
       "id_eleve": 19961294282921630000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4110,7 +6942,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "libreville",
       "id_eleve": 85840306036738360000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4119,7 +6951,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Guyancourt",
       "id_eleve": 44712580812304510000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -4128,7 +6960,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bezons",
       "id_eleve": 3086532433162279400,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -4137,7 +6969,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "bourg la reine",
       "id_eleve": 85613209119759910000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -4146,7 +6978,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "marseille",
       "id_eleve": 91110469601254670000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -4155,7 +6987,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VINCENNES",
       "id_eleve": 12692826205975990000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4164,7 +6996,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT-OUEN L'AUMÔNE",
       "id_eleve": 81959019400883220000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -4173,7 +7005,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sartrouville",
       "id_eleve": 26089541536674128000,
-      "id_classe": "67 800 944 844 426 400 000"
+      "id_classe": 67800944844426400000
     },
     {
       "etat": "alternant",
@@ -4182,7 +7014,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Neuilly sur Seine",
       "id_eleve": 48857582163565170000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4191,7 +7023,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Lévignen",
       "id_eleve": 43552028307568300000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "étudiant",
@@ -4200,7 +7032,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MAGNY LE HONGRE",
       "id_eleve": 97785855689076380000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4209,7 +7041,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bussy-Saint-Georges",
       "id_eleve": 51192275905174495000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4218,7 +7050,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Drancy",
       "id_eleve": 52472340215444380000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "alternant",
@@ -4227,7 +7059,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOIS D'ARCY",
       "id_eleve": 65938892016331800000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -4236,7 +7068,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cormeilles- En- Parisis",
       "id_eleve": 10522485673327358000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -4245,7 +7077,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VITRY-SUR-SEINE",
       "id_eleve": 36148369765717467000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4254,7 +7086,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Brunoy",
       "id_eleve": 16193282821946614000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4263,7 +7095,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLEJUIF",
       "id_eleve": 80238420939307430000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -4272,7 +7104,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CRETEIL",
       "id_eleve": 48432446538291560000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -4281,7 +7113,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Houilles",
       "id_eleve": 70754138329549350000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -4290,7 +7122,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Yerres",
       "id_eleve": 73480293059824570000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4299,7 +7131,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montereau-Fault-Yonne",
       "id_eleve": 96938730230797840000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4308,7 +7140,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noyen-sur-Seine",
       "id_eleve": 39653308909934060000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4317,7 +7149,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 21339653455276990000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -4326,7 +7158,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Choisy-le-roi",
       "id_eleve": 32446150426789810000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -4335,7 +7167,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villeneuve d'Ascq",
       "id_eleve": 79040090018254950000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -4344,7 +7176,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clichy",
       "id_eleve": 90557766333957770000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4353,7 +7185,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières sur Seine",
       "id_eleve": 49249570918703410000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -4362,7 +7194,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GUYANCOURT",
       "id_eleve": 14127160463384168000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -4371,7 +7203,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Maisons-Alfort",
       "id_eleve": 27633919241971257000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4380,7 +7212,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTLIGNON",
       "id_eleve": 80832336471291640000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4389,7 +7221,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Courbevoie",
       "id_eleve": 46783841651725380000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "étudiant",
@@ -4398,7 +7230,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SACLAY",
       "id_eleve": 11424222277767991000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "étudiant",
@@ -4407,7 +7239,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "DEUIL LA BARRE",
       "id_eleve": 21571215476953660000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -4416,7 +7248,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bois les colombes",
       "id_eleve": 10193790855918365000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -4425,7 +7257,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ASNIERES-SUR-SEINE",
       "id_eleve": 38380757756224350000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4434,7 +7266,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTREUIL",
       "id_eleve": 42831909246572090000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -4443,7 +7275,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 83967716994260520000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -4452,7 +7284,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Kremlin-Bicêtre",
       "id_eleve": 5837027170541833000,
-      "id_classe": "26 050 628 059 066 300 000"
+      "id_classe": 26050628059066300000
     },
     {
       "etat": "alternant",
@@ -4461,7 +7293,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 57605777950607800000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "alternant",
@@ -4470,7 +7302,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Trappes",
       "id_eleve": 75071401281007060000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "étudiant",
@@ -4479,7 +7311,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "IVRY SUR SEINE",
       "id_eleve": 91621072929555550000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "alternant",
@@ -4488,7 +7320,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GENNEVILLIERS",
       "id_eleve": 25208969453096366000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4497,7 +7329,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "clichy",
       "id_eleve": 12660047602845428000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "étudiant",
@@ -4506,7 +7338,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 1797545378304556300,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -4515,7 +7347,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chartres",
       "id_eleve": 40390375190726280000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "étudiant",
@@ -4524,7 +7356,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE MEE SUR SEINE",
       "id_eleve": 75530030034212620000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -4533,7 +7365,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 79614945217340230000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -4542,7 +7374,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 40985218329400010000,
-      "id_classe": "19 363 701 795 804 900 000"
+      "id_classe": 19363701795804900000
     },
     {
       "etat": "alternant",
@@ -4551,7 +7383,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villemomble",
       "id_eleve": 3942168947590850000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "étudiant",
@@ -4560,7 +7392,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ARGENTEUIL",
       "id_eleve": 39390106321942740000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -4569,7 +7401,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Serris",
       "id_eleve": 47785755782872154000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -4578,7 +7410,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 4023656885614222000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "alternant",
@@ -4587,7 +7419,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Cloud",
       "id_eleve": 32631499961154640000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -4596,7 +7428,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Voisins le bretonneux",
       "id_eleve": 93476095608680090000,
-      "id_classe": "6 696 762 360 876 300 000"
+      "id_classe": 6696762360876300000
     },
     {
       "etat": "étudiant",
@@ -4605,7 +7437,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Strasbourg",
       "id_eleve": 88466920504409750000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -4614,7 +7446,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ormesson-Sur-Marne",
       "id_eleve": 76152420799877780000,
-      "id_classe": "64 057 565 100 483 500 000"
+      "id_classe": 64057565100483500000
     },
     {
       "etat": "étudiant",
@@ -4623,7 +7455,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 20997549236941525000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -4632,7 +7464,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 8683378981650875000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -4641,7 +7473,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Colombes - (92700)",
       "id_eleve": 21470888135169073000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -4650,7 +7482,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BAGNEUX",
       "id_eleve": 571676631526483840,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -4659,7 +7491,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 61267500320373700000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4668,7 +7500,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "HAUTOT SUR MER",
       "id_eleve": 49839620630293240000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4677,7 +7509,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT OUEN",
       "id_eleve": 90268636037693590000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -4686,7 +7518,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montfermeil",
       "id_eleve": 40852122148839640000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -4695,7 +7527,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chilly Mazarin",
       "id_eleve": 26600183856426713000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4704,7 +7536,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 93645633057046770000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -4713,7 +7545,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Juziers",
       "id_eleve": 96104331117737030000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4722,7 +7554,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE PERRAY EN YVELINES",
       "id_eleve": 5183705308990245000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4731,7 +7563,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Kremlin bicêtre",
       "id_eleve": 39916194744187150000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -4740,7 +7572,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rosny-sous-bois",
       "id_eleve": 65182099317050696,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -4749,7 +7581,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint genevieve des Bois.",
       "id_eleve": 39954402309515400000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -4758,7 +7590,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "strasbourg",
       "id_eleve": 62472177896021260000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -4767,7 +7599,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montreuil",
       "id_eleve": 69627756714307090000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -4776,7 +7608,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SEVRAN",
       "id_eleve": 22890107087763170000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -4785,7 +7617,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MANTES LA JOLIE",
       "id_eleve": 19965794596367740000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4794,7 +7626,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Pontault-Combault",
       "id_eleve": 8874434663907188000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -4803,7 +7635,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Massy",
       "id_eleve": 99436923332480750000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -4812,7 +7644,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Arnouville",
       "id_eleve": 92314848295346010000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -4821,7 +7653,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Corbeil-Essonnes",
       "id_eleve": 32107669482685420000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -4830,7 +7662,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Creil",
       "id_eleve": 33662887300589230000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -4839,7 +7671,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cergy Saint-Christophe",
       "id_eleve": 32609820362205010000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -4848,7 +7680,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Eaubonne",
       "id_eleve": 50280704165543920000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -4857,7 +7689,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clamart",
       "id_eleve": 18846074522140037000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -4866,7 +7698,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Arnouville",
       "id_eleve": 91179433858070330000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "étudiant",
@@ -4875,7 +7707,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 53019704541724510000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4884,7 +7716,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 548211027336226240,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4893,7 +7725,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ISSY LES MOULINEAUX",
       "id_eleve": 79029490385573660000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "étudiant",
@@ -4902,7 +7734,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chevilly Larue",
       "id_eleve": 8282202085251350000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -4911,7 +7743,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "St Thibault des Vignes",
       "id_eleve": 86100779690287040000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -4920,7 +7752,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NANTERRE",
       "id_eleve": 58073653594267910000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4929,7 +7761,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vitry sur seine",
       "id_eleve": 51112529196903850000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4938,7 +7770,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ville d'Avray",
       "id_eleve": 20863119037145027000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -4947,7 +7779,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Rosny-sous-Bois",
       "id_eleve": 41591000948199160000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -4956,7 +7788,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Isles les Meldeuses",
       "id_eleve": 60287030357608370000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4965,7 +7797,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Antony",
       "id_eleve": 94773865857706330000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4974,7 +7806,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BAILLY ROMAINVILLIERS",
       "id_eleve": 4750843428945645000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -4983,7 +7815,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Trilport",
       "id_eleve": 94679624919898600000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -4992,7 +7824,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Noisy Le Grand",
       "id_eleve": 56703499564034966000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5001,7 +7833,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aulnay sous Bois",
       "id_eleve": 65059292134802940000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5010,7 +7842,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GOUSSAINVILLE",
       "id_eleve": 13007389055000630000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -5019,7 +7851,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Denis",
       "id_eleve": 75583351555753560000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5028,7 +7860,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTPELLIER",
       "id_eleve": 67190815274484250000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5037,7 +7869,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Maisons-Alfort",
       "id_eleve": 19285160113722552000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -5046,7 +7878,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 8982747679810137000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5055,7 +7887,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bléneau",
       "id_eleve": 43346838418225880000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -5064,7 +7896,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LAGNY SUR MARNE",
       "id_eleve": 55665174159137060000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -5073,7 +7905,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LA QUEUE EN BRIE",
       "id_eleve": 53890351943831030000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5082,7 +7914,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Lomé",
       "id_eleve": 90331958765525550000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -5091,7 +7923,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Elancourt",
       "id_eleve": 37235606549088740000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5100,7 +7932,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Souppes-sur-Loing",
       "id_eleve": 25096695469138276000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -5109,7 +7941,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 84391813862486520000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -5118,7 +7950,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Cannes",
       "id_eleve": 14993141189047351000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5127,7 +7959,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Créteil",
       "id_eleve": 61717871354391910000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -5136,7 +7968,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE LILAS",
       "id_eleve": 54360811420542860000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5145,7 +7977,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "FONTENAY SOUS BOIS",
       "id_eleve": 93654040099333570000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "alternant",
@@ -5154,7 +7986,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LAY-SAINT-CHRISTOPHE",
       "id_eleve": 14460176245728639000,
-      "id_classe": "57 583 613 331 577 900 000"
+      "id_classe": 57583613331577900000
     },
     {
       "etat": "alternant",
@@ -5163,7 +7995,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 29586815952267740000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5172,7 +8004,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Clichy",
       "id_eleve": 34004821746982384000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5181,7 +8013,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ABIDJAN",
       "id_eleve": 8743324310129864000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -5190,7 +8022,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "maurepas",
       "id_eleve": 57540582141702545000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -5199,7 +8031,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Villeneuve le roi",
       "id_eleve": 20989942449038967000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -5208,7 +8040,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VANVES",
       "id_eleve": 14181288437106470000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5217,7 +8049,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ARPAJON",
       "id_eleve": 60169928571916650000,
-      "id_classe": "68 987 116 330 916 500 000"
+      "id_classe": 68987116330916500000
     },
     {
       "etat": "étudiant",
@@ -5226,7 +8058,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 14726989998681740000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5235,7 +8067,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Issou",
       "id_eleve": 33818450240561398000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5244,7 +8076,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Elancourt",
       "id_eleve": 82281999156661940000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5253,7 +8085,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champigny Sur Marne",
       "id_eleve": 48357358111079730000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5262,7 +8094,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Lagny sur Marnes",
       "id_eleve": 75971070765716640000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -5271,7 +8103,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE VESINET",
       "id_eleve": 11735568621657321000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5280,7 +8112,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 55329253136626770000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -5289,7 +8121,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 26516436374232502000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5298,7 +8130,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHNATELOUP LES VIGNES",
       "id_eleve": 16348947499208272000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5307,7 +8139,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gouvieux",
       "id_eleve": 54940201330656750000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5316,7 +8148,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTREUIL",
       "id_eleve": 52829663843306460000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5325,7 +8157,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MONTREUIL",
       "id_eleve": 45645438033945660000,
-      "id_classe": "19 363 701 795 804 900 000"
+      "id_classe": 19363701795804900000
     },
     {
       "etat": "alternant",
@@ -5334,7 +8166,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 39153416461098710000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -5343,7 +8175,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint Brice sous Forêt",
       "id_eleve": 81830634048886110000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5352,7 +8184,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 13052896109629483000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "étudiant",
@@ -5361,7 +8193,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LIVRY GARGAN",
       "id_eleve": 71637281795541180000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5370,7 +8202,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VAUCRESSON",
       "id_eleve": 16799326808175682000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5379,7 +8211,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SURESNES",
       "id_eleve": 32085096412974750000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5388,7 +8220,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Chatelet en Brie",
       "id_eleve": 41880978549168290000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5397,7 +8229,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "le perreux sur marne",
       "id_eleve": 39597292284057920000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "étudiant",
@@ -5406,7 +8238,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Epinay sur Orge",
       "id_eleve": 26016791815199535000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5415,7 +8247,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 92264304968245380000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5424,7 +8256,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nemours",
       "id_eleve": 30760380135488676000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5433,7 +8265,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chevry Cossigny",
       "id_eleve": 7892845918713839000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5442,7 +8274,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Eaubonne",
       "id_eleve": 2872887846153237000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -5451,7 +8283,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 9582855992280451000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5460,7 +8292,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Carrières sous poissy",
       "id_eleve": 38226517995110860000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5469,7 +8301,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Isles les meldeuses",
       "id_eleve": 81446247236446010000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -5478,7 +8310,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chelles",
       "id_eleve": 47755207524857880000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5487,7 +8319,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SARTROUVILLE",
       "id_eleve": 22865631933939990000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5496,7 +8328,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NOISY LE GRAND",
       "id_eleve": 65209453873227020000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -5505,7 +8337,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LES ESSARTS LE ROI",
       "id_eleve": 47538515374107320000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5514,7 +8346,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montévrain",
       "id_eleve": 67919377363966790000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5523,7 +8355,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ouville-La-Rivière",
       "id_eleve": 9553229100469142000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5532,7 +8364,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PONTOISE",
       "id_eleve": 336433026273084700,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -5541,7 +8373,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "HOUILLES",
       "id_eleve": 26152863624445026000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "étudiant",
@@ -5550,7 +8382,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Fargeau Ponthierry",
       "id_eleve": 36811332261828550000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -5559,7 +8391,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Plaisir",
       "id_eleve": 99365121936274060000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5568,7 +8400,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vitry Sur Seine",
       "id_eleve": 22100172099216990000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5577,7 +8409,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Soisy sous Montmorency",
       "id_eleve": 44635090377026940000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5586,7 +8418,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 2961946874719174000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5595,7 +8427,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ris-Orangis",
       "id_eleve": 54694197244665530000,
-      "id_classe": "15 321 017 723 655 400 000"
+      "id_classe": 15321017723655400000
     },
     {
       "etat": "alternant",
@@ -5604,7 +8436,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bussy saint Georges",
       "id_eleve": 6231821024392789000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5613,7 +8445,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT DENIS",
       "id_eleve": 74743215551623840000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5622,7 +8454,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "OLLAINVILLE",
       "id_eleve": 7087384805353218000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5631,7 +8463,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chartres",
       "id_eleve": 92156637681075040000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5640,7 +8472,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHOISY LE ROI",
       "id_eleve": 69695949252914430000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5649,7 +8481,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Nanterre",
       "id_eleve": 55694499107517800000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5658,7 +8490,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sevran",
       "id_eleve": 45606471485913850000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5667,7 +8499,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Courbevoie",
       "id_eleve": 60539984894190210000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5676,7 +8508,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Aubervilliers",
       "id_eleve": 51909200998216660000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5685,7 +8517,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 18515301336194310000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "étudiant",
@@ -5694,7 +8526,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Beauchamp",
       "id_eleve": 34365036236781474000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5703,7 +8535,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Le Blanc Mesnil",
       "id_eleve": 73615754115978180000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5712,7 +8544,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 48116565728752060000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "alternant",
@@ -5721,7 +8553,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SEVRAN",
       "id_eleve": 90406257990826380000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -5730,7 +8562,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Athis Mons",
       "id_eleve": 59339248045044620000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -5739,7 +8571,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 68073371659577940000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5748,7 +8580,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "STE GENEVIEVE DES BOIS",
       "id_eleve": 31718570000112062000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -5757,7 +8589,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Alforville",
       "id_eleve": 49916291939826710000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "étudiant",
@@ -5766,7 +8598,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 59234348823852750000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -5775,7 +8607,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Bois-Colombes",
       "id_eleve": 41825037398802300000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "alternant",
@@ -5784,7 +8616,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BONDY",
       "id_eleve": 77325213199596300000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -5793,7 +8625,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 73299305025850830000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5802,7 +8634,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LE RAINCY",
       "id_eleve": 29141993378411782000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5811,7 +8643,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOULOGNE BILLANCOURT",
       "id_eleve": 90015166125438320000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -5820,7 +8652,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Champigny Sur Marne",
       "id_eleve": 34646924983621394000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -5829,7 +8661,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 20132734881276140000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -5838,7 +8670,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Montigny le Bretonneux",
       "id_eleve": 92454733525795400000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -5847,7 +8679,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Fort de France - martinique",
       "id_eleve": 51123448003808590000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -5856,7 +8688,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 28846634995583136000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5865,7 +8697,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLEPINTE",
       "id_eleve": 62737980040156480000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5874,7 +8706,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières Sur Seine",
       "id_eleve": 23556994666094130000,
-      "id_classe": "82 733 987 601 004 600 000"
+      "id_classe": 82733987601004600000
     },
     {
       "etat": "alternant",
@@ -5883,7 +8715,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Les Mureaux",
       "id_eleve": 68140440386589704000,
-      "id_classe": "51 077 828 107 119 900 000"
+      "id_classe": 51077828107119900000
     },
     {
       "etat": "étudiant",
@@ -5892,7 +8724,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Issy les Moulineaux",
       "id_eleve": 93087122782197780000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5901,7 +8733,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 3622909832582590000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5910,7 +8742,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "LIBREVILLE",
       "id_eleve": 75538518667473930000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "étudiant",
@@ -5919,7 +8751,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ALFORTVILLE",
       "id_eleve": 15450177838772976000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -5928,7 +8760,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 95043089281674560000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "étudiant",
@@ -5937,7 +8769,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Conflans Saint Honorine.",
       "id_eleve": 78710446401044230000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -5946,7 +8778,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gonnesse",
       "id_eleve": 13619654446058584000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -5955,7 +8787,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BANDJOUN",
       "id_eleve": 52481266261732440000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -5964,7 +8796,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 46449243639312654000,
-      "id_classe": "98 081 545 639 010 400 000"
+      "id_classe": 98081545639010400000
     },
     {
       "etat": "alternant",
@@ -5973,7 +8805,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Chaumont",
       "id_eleve": 88786022930271420000,
-      "id_classe": "99 060 373 198 634 700 000"
+      "id_classe": 99060373198634700000
     },
     {
       "etat": "étudiant",
@@ -5982,7 +8814,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLEJUIF",
       "id_eleve": 77364358731345350000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -5991,7 +8823,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PANTIN",
       "id_eleve": 81800180920007740000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6000,7 +8832,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VILLEMOBLE",
       "id_eleve": 10654311857010866000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "étudiant",
@@ -6009,7 +8841,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SEVRES",
       "id_eleve": 79391507479075700000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6018,7 +8850,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "MEUDON",
       "id_eleve": 37390842578174665000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6027,7 +8859,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BONDY",
       "id_eleve": 52073046815776140000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6036,7 +8868,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VINCENNES",
       "id_eleve": 20702206044312110000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6045,7 +8877,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Meaux",
       "id_eleve": 31205889512701497000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6054,7 +8886,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Levallois-Perret",
       "id_eleve": 37616376071105780000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -6063,7 +8895,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VALENTON",
       "id_eleve": 26246050264566354000,
-      "id_classe": "98 092 601 728 449 700 000"
+      "id_classe": 98092601728449700000
     },
     {
       "etat": "alternant",
@@ -6072,7 +8904,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Paris",
       "id_eleve": 26279240750942810000,
-      "id_classe": "65 285 059 947 142 000 000"
+      "id_classe": 65285059947142000000
     },
     {
       "etat": "alternant",
@@ -6081,7 +8913,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Deido-Douala",
       "id_eleve": 75761750009938920000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6090,7 +8922,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Vitry-Sur-Seine",
       "id_eleve": 90919829821943300000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6099,7 +8931,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "YERRES",
       "id_eleve": 48959621076897270000,
-      "id_classe": "69 535 891 505 307 500 000"
+      "id_classe": 69535891505307500000
     },
     {
       "etat": "étudiant",
@@ -6108,7 +8940,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BAIE MAHAULT",
       "id_eleve": 90901559050893870000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6117,7 +8949,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "POITIERS",
       "id_eleve": 91323979117838240000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6126,7 +8958,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Saint-Denis",
       "id_eleve": 4959230110180058000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6135,7 +8967,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Malakoff",
       "id_eleve": 99357500199161870000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -6144,7 +8976,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "GAGNY",
       "id_eleve": 55919597674796384000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "étudiant",
@@ -6153,7 +8985,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "NANTES",
       "id_eleve": 81501189332445070000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6162,7 +8994,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Sarcelles",
       "id_eleve": 10022321549725817000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "alternant",
@@ -6171,7 +9003,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "AUVERS SUR OISE",
       "id_eleve": 87175935268678550000,
-      "id_classe": "58 879 951 876 123 900 000"
+      "id_classe": 58879951876123900000
     },
     {
       "etat": "alternant",
@@ -6180,7 +9012,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "KINSHASA",
       "id_eleve": 93884822643205340000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6189,7 +9021,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "SAINT DENIS",
       "id_eleve": 7066512854776922000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "alternant",
@@ -6198,7 +9030,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Asnières-sur-Seine",
       "id_eleve": 64911544647175980000,
-      "id_classe": "90 568 348 866 444 300 000"
+      "id_classe": 90568348866444300000
     },
     {
       "etat": "étudiant",
@@ -6207,7 +9039,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "JOINVILLE LE PONT",
       "id_eleve": 25790145791260590000,
-      "id_classe": "94 152 767 477 457 700 000"
+      "id_classe": 94152767477457700000
     },
     {
       "etat": "alternant",
@@ -6216,7 +9048,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Toulon",
       "id_eleve": 23283801893978410000,
-      "id_classe": "49 273 758 189 005 500 000"
+      "id_classe": 49273758189005500000
     },
     {
       "etat": "alternant",
@@ -6225,7 +9057,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Gagny",
       "id_eleve": 43697126585115770000,
-      "id_classe": "42 186 206 852 701 400 000"
+      "id_classe": 42186206852701400000
     },
     {
       "etat": "étudiant",
@@ -6234,7 +9066,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "CHAMPS SUR PARNE",
       "id_eleve": 92712559622106710000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "étudiant",
@@ -6243,7 +9075,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "VERSAILLES",
       "id_eleve": 59038660752955220000,
-      "id_classe": "19 363 701 795 804 900 000"
+      "id_classe": 19363701795804900000
     },
     {
       "etat": "étudiant",
@@ -6252,7 +9084,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "BOIS COLOMBES",
       "id_eleve": 15643005481090101000,
-      "id_classe": "19 363 701 795 804 900 000"
+      "id_classe": 19363701795804900000
     },
     {
       "etat": "étudiant",
@@ -6261,7 +9093,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "PARIS",
       "id_eleve": 28748717345495814000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6270,7 +9102,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "ROMAINVILLE",
       "id_eleve": 13880403098765617000,
-      "id_classe": "32 009 191 079 552 500 000"
+      "id_classe": 32009191079552500000
     },
     {
       "etat": "étudiant",
@@ -6279,7 +9111,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Orléans",
       "id_eleve": 5446219733188127000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -6288,7 +9120,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Dakar",
       "id_eleve": 75273172998398900000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -6297,7 +9129,7 @@ const student = [
       "saison": "2021-2022",
       "ville": "Ouagadougou",
       "id_eleve": 50516305800433975000,
-      "id_classe": "86 650 652 074 839 200 000"
+      "id_classe": 86650652074839200000
     },
     {
       "etat": "alternant",
@@ -6306,8 +9138,8 @@ const student = [
       "saison": "2021-2022",
       "ville": "VANVES",
       "id_eleve": 12889718868827590000,
-      "id_classe": "18 865 941 934 474 100 000"
+      "id_classe": 18865941934474100000
     }
   ]
 
-  export default student;
+  export default entreprises;

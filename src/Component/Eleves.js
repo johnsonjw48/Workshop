@@ -1,7 +1,52 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import student from '../Outils/data'
+import getTenStudents from '../Outils/query';
+
+
+const calculTrajet = async () => {
+  try {
+    // const students = await getAllStudents()
+    const students = await getTenStudents()
+    students.forEach(async(student) => {
+      let adresse = ''
+      student.adresse_rue.split(' ').forEach(element => {
+        adresse+=element+'+'
+      })
+      adresse+=student.adresse_cp+'+'   
+      student.adresse_ville.split(' ').forEach(element => {
+        adresse+=element+'+'
+      })
+      adresse = adresse.substring(0, adresse.length - 1)
+
+      const result = await fetch(`http://localhost:3000/https://maps.googleapis.com/maps/api/directions/json?origin=${adresse}&destination=Digital+Campus+Paris&mode=transit&key=AIzaSyAxUo5Cc50LAlwFNgOa00DNfCuCBQKDMq4`)
+      const data = await result.json()
+
+      // console.log(data)
+      if(data.status !== 'ZERO_RESULTS') {
+        const steps = data.routes[0].legs[0].steps
+        let tab = []
+
+        steps.filter(step => 
+        step.travel_mode !== 'WALKING'
+        ).forEach(step => {
+          let obj = {
+            distance : step.distance.value,
+            vehicle_type: step.transit_details.line.vehicle.name
+          }
+          tab.push(obj)
+        })
+        console.log(tab)
+      }
+
+    })
+
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+calculTrajet()
 
 
 
