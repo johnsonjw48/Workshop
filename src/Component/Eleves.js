@@ -1,15 +1,23 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {getTenStudents, emissionCalcul} from '../Outils/query';
+import {getAllStudents, emissionCalcul, insertDateTimeEmission} from '../Outils/query';
 
 require('dotenv').config()
 
+
+const test = async() => {
+  const students = await getAllStudents();
+  console.log(students)
+}
+
+test()
+
 const calculTrajet = async () => {
   try {
-    // const students = await getAllStudents();
+    const students = await getAllStudents();
 
-    const students = await getTenStudents();
+    // const students = await getTenStudents();
 
     students.forEach(async(student) => {
       let adress = '';
@@ -43,14 +51,18 @@ const calculTrajet = async () => {
         arrayData.forEach( async (data) => {
           let distanceKM = data.distance / 1000;
           let emissionCO2 = await emissionCalcul(distanceKM, data.vehicle_type);
-          // console.log(emissionCO2)
           tabCO2.push(emissionCO2);
         })
         
-        setTimeout(() => {
-          // console.log(tabCO2)
-          return tabCO2
-        }, 1000);
+        let totalCO2 = 0;
+        
+        await timeout(1000)
+        tabCO2.forEach(emission => {
+          totalCO2+=emission
+        })
+
+        insertDateTimeEmission(student.identifiant_eleve, totalCO2)
+
       }
     })
   } catch(e) {
@@ -58,15 +70,11 @@ const calculTrajet = async () => {
   }
 }
 
-const test = async () => {
-  let trajet = await calculTrajet()
-  setTimeout(() => {
-    console.log(trajet)
-  }, 1000);
-  
-}
+// calculTrajet()
 
-test()
+const timeout = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 const Eleves = () => {
   const percentage = 71;

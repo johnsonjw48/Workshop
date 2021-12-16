@@ -1,5 +1,5 @@
 import db from "./database";
-import { collection, query, getDocs, limit, where } from "firebase/firestore"; 
+import { collection, query, getDocs, limit, where, addDoc } from "firebase/firestore"; 
 // import entreprises from "./data"
 
 // async function addClasses() {
@@ -67,21 +67,21 @@ import { collection, query, getDocs, limit, where } from "firebase/firestore";
 //     return tab;
 // }
 
-export async function getTenStudents() {
+export async function getAllStudents() {
     let tab = [];
-    const q = query(collection(db, "Eleves"), limit(10));
+    const q = query(collection(db, "Date_Eleve"));
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc) => {
         let obj = {
-            identifiant_eleve: doc.data().id_eleve,
-            adresse_rue: doc.data().adresse_rue,
-            adresse_cp: doc.data().adresse_cp,
-            adresse_ville: doc.data().adresse_ville
+            identifiant_eleve: doc.data().id_eleve
+            // adresse_rue: doc.data().adresse_rue,
+            // adresse_cp: doc.data().adresse_cp,
+            // adresse_ville: doc.data().adresse_ville
         }
         tab.push(obj)
     })
-    return tab;
+    return tab.length;
 }
 
 export async function emissionCalcul(distance, transport) {
@@ -116,5 +116,15 @@ export async function emissionCalcul(distance, transport) {
     }
 
     return emissionco2;
+}
+
+
+export async function insertDateTimeEmission(id_student, emissionCO2) {
+
+    await addDoc(collection(db, "Date_Eleve"), {
+        id_eleve: id_student,
+        emissionCO2: emissionCO2,
+        dateTime: new Date().getTime()
+    });
 }
 
