@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import getTenStudents from '../Outils/query';
+import {getTenStudents, emissionCalcul} from '../Outils/query';
 
 require('dotenv').config()
 
@@ -37,7 +37,20 @@ const calculTrajet = async () => {
             arrayData.push(data);
           }
         )
-        console.log(arrayData);
+        
+        let tabCO2 = [];
+
+        arrayData.forEach( async (data) => {
+          let distanceKM = data.distance / 1000;
+          let emissionCO2 = await emissionCalcul(distanceKM, data.vehicle_type);
+          // console.log(emissionCO2)
+          tabCO2.push(emissionCO2);
+        })
+        
+        setTimeout(() => {
+          // console.log(tabCO2)
+          return tabCO2
+        }, 1000);
       }
     })
   } catch(e) {
@@ -45,7 +58,15 @@ const calculTrajet = async () => {
   }
 }
 
-calculTrajet()
+const test = async () => {
+  let trajet = await calculTrajet()
+  setTimeout(() => {
+    console.log(trajet)
+  }, 1000);
+  
+}
+
+test()
 
 const Eleves = () => {
   const percentage = 71;

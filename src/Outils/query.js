@@ -1,5 +1,5 @@
 import db from "./database";
-import { collection, query, getDocs, limit } from "firebase/firestore"; 
+import { collection, query, getDocs, limit, where } from "firebase/firestore"; 
 // import entreprises from "./data"
 
 // async function addClasses() {
@@ -67,7 +67,7 @@ import { collection, query, getDocs, limit } from "firebase/firestore";
 //     return tab;
 // }
 
-const getTenStudents = async () => {
+export async function getTenStudents() {
     let tab = [];
     const q = query(collection(db, "Eleves"), limit(10));
     const querySnapshot = await getDocs(q);
@@ -84,5 +84,37 @@ const getTenStudents = async () => {
     return tab;
 }
 
-export default getTenStudents;
+export async function emissionCalcul(distance, transport) {
+
+    let q;
+
+    switch(transport) {
+        case 'Train':
+            q = query(collection(db, "Transport"), where("intitule", "==", "RER"));
+            break;
+        case 'Métro':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Métro"));
+            break;
+        case 'Bus':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Bus"));
+            break;
+        case 'Tramway':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Tramway"));
+            break;
+        default:
+            q = null;
+            break;
+    }
+
+    let emissionco2 = 0;
+
+    if(q !== null) {
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach((doc) => {
+            emissionco2 = doc.data().gco2eKM * distance
+        })
+    }
+
+    return emissionco2;
+}
 
