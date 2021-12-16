@@ -1,5 +1,67 @@
 import db from "./database";
-import { collection, query, getDocs, limit, where, addDoc } from "firebase/firestore"; 
+import { collection, query, getDocs, where, addDoc } from "firebase/firestore"; 
+
+export async function getAllStudents() {
+    let tab = [];
+    const q = query(collection(db, "Eleves"));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc) => {
+        let obj = {
+            identifiant_eleve: doc.data().id_eleve,
+            adresse_rue: doc.data().adresse_rue,
+            adresse_cp: doc.data().adresse_cp,
+            adresse_ville: doc.data().adresse_ville
+        }
+        tab.push(obj)
+    })
+    return tab;
+}
+
+export async function emissionCalcul(distance, transport) {
+
+    let q;
+
+    switch(transport) {
+        case 'Train':
+            q = query(collection(db, "Transport"), where("intitule", "==", "RER"));
+            break;
+        case 'Métro':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Métro"));
+            break;
+        case 'Bus':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Bus"));
+            break;
+        case 'Tramway':
+            q = query(collection(db, "Transport"), where("intitule", "==", "Tramway"));
+            break;
+        default:
+            q = null;
+            break;
+    }
+
+    let emissionco2 = 0;
+
+    if(q !== null) {
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach((doc) => {
+            emissionco2 = doc.data().gco2eKM * distance
+        })
+    }
+
+    return emissionco2;
+}
+
+
+export async function insertDateTimeEmission(id_student, emissionCO2, date) {
+    
+    await addDoc(collection(db, "Date_Eleve"), {
+        id_eleve: id_student,
+        emissionCO2: emissionCO2,
+        dateTime: date
+    });
+}
+
 // import entreprises from "./data"
 
 // async function addClasses() {
@@ -66,65 +128,4 @@ import { collection, query, getDocs, limit, where, addDoc } from "firebase/fires
 //     })
 //     return tab;
 // }
-
-export async function getAllStudents() {
-    let tab = [];
-    const q = query(collection(db, "Date_Eleve"));
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.forEach((doc) => {
-        let obj = {
-            identifiant_eleve: doc.data().id_eleve
-            // adresse_rue: doc.data().adresse_rue,
-            // adresse_cp: doc.data().adresse_cp,
-            // adresse_ville: doc.data().adresse_ville
-        }
-        tab.push(obj)
-    })
-    return tab.length;
-}
-
-export async function emissionCalcul(distance, transport) {
-
-    let q;
-
-    switch(transport) {
-        case 'Train':
-            q = query(collection(db, "Transport"), where("intitule", "==", "RER"));
-            break;
-        case 'Métro':
-            q = query(collection(db, "Transport"), where("intitule", "==", "Métro"));
-            break;
-        case 'Bus':
-            q = query(collection(db, "Transport"), where("intitule", "==", "Bus"));
-            break;
-        case 'Tramway':
-            q = query(collection(db, "Transport"), where("intitule", "==", "Tramway"));
-            break;
-        default:
-            q = null;
-            break;
-    }
-
-    let emissionco2 = 0;
-
-    if(q !== null) {
-        const querySnapshot = await getDocs(q)
-        querySnapshot.forEach((doc) => {
-            emissionco2 = doc.data().gco2eKM * distance
-        })
-    }
-
-    return emissionco2;
-}
-
-
-export async function insertDateTimeEmission(id_student, emissionCO2) {
-
-    await addDoc(collection(db, "Date_Eleve"), {
-        id_eleve: id_student,
-        emissionCO2: emissionCO2,
-        dateTime: new Date().getTime()
-    });
-}
 

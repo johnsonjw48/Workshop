@@ -1,76 +1,81 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {getAllStudents, emissionCalcul, insertDateTimeEmission} from '../Outils/query';
+import {getTenStudents, emissionCalcul, insertDateTimeEmission, getAllStudents} from '../Outils/query';
 
 require('dotenv').config()
 
 
-const test = async() => {
-  const students = await getAllStudents();
-  console.log(students)
-}
+// const test = async() => {
+//   const students = await getAllStudents();
+//   console.log(students)
+// }
 
-test()
+// test()
 
 const calculTrajet = async () => {
   try {
+
     const students = await getAllStudents();
 
     // const students = await getTenStudents();
+  
+    let dateFin = new Date(2021, 11, 31)
+    for (let d = new Date(2021, 11, 1); d <= dateFin; d.setDate(d.getDate() + 1)) {
+      console.log('test')
+      students.forEach(async(student) => {
+        let adress = '';
 
-    students.forEach(async(student) => {
-      let adress = '';
+        student.adresse_rue.split(' ')
+          .forEach(element => adress += element + '+');
+        adress += student.adresse_cp + '+';
+        student.adresse_ville.split(' ')
+          .forEach(element => adress += element + '+');
+        adress = adress.substring(0, adress.length - 1);
 
-      student.adresse_rue.split(' ')
-        .forEach(element => adress += element + '+');
-      adress += student.adresse_cp + '+';
-      student.adresse_ville.split(' ')
-        .forEach(element => adress += element + '+');
-      adress = adress.substring(0, adress.length - 1);
+        const result = await fetch(`https://digital-dashboard-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=${process.env.REACT_APP_API_KEY}`);
+        const data = await result.json();
 
-      const result = await fetch(`https://digital-dashboard-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=${process.env.REACT_APP_API_KEY}`);
-      const data = await result.json();
+        if (data.routes.length !== 0) {
+          const steps = data.routes[0].legs[0].steps;
+          let arrayData = [];
 
-      if (data.status !== 'ZERO_RESULTS') {
-        const steps = data.routes[0].legs[0].steps;
-        let arrayData = [];
-
-        steps.filter(step => step.travel_mode !== 'WALKING')
-          .forEach(step => {
-            let data = {
-              distance : step.distance.value,
-              vehicle_type: step.transit_details.line.vehicle.name
+          steps.filter(step => step.travel_mode !== 'WALKING')
+            .forEach(step => {
+              let data = {
+                distance : step.distance.value,
+                vehicle_type: step.transit_details.line.vehicle.name
+              }
+              arrayData.push(data);
             }
-            arrayData.push(data);
-          }
-        )
-        
-        let tabCO2 = [];
+          )
+          
+          let tabCO2 = [];
 
-        arrayData.forEach( async (data) => {
-          let distanceKM = data.distance / 1000;
-          let emissionCO2 = await emissionCalcul(distanceKM, data.vehicle_type);
-          tabCO2.push(emissionCO2);
-        })
-        
-        let totalCO2 = 0;
-        
-        await timeout(1000)
-        tabCO2.forEach(emission => {
-          totalCO2+=emission
-        })
+          arrayData.forEach( async (data) => {
+            let distanceKM = data.distance / 1000;
+            let emissionCO2 = await emissionCalcul(distanceKM, data.vehicle_type);
+            tabCO2.push(emissionCO2);
+          })
+          
+          let totalCO2 = 0;
+          
+          await timeout(1000)
+          tabCO2.forEach(emission => {
+            totalCO2+=emission
+          })
 
-        insertDateTimeEmission(student.identifiant_eleve, totalCO2)
+          insertDateTimeEmission(student.identifiant_eleve, totalCO2, d)
 
-      }
-    })
+        }
+      })
+    }
   } catch(e) {
     console.log(e);
   }
 }
 
-// calculTrajet()
+calculTrajet()
 
 const timeout = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
