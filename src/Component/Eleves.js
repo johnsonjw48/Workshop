@@ -19,7 +19,7 @@ const calculTrajet = async () => {
         .forEach(element => adress += element + '+');
       adress = adress.substring(0, adress.length - 1);
 
-      const result = await fetch(`http://localhost:3001/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=AIzaSyAxUo5Cc50LAlwFNgOa00DNfCuCBQKDMq4`);
+      const result = await fetch(`https://digital-dashboard-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=${process.env.API_KEY}`);
       const data = await result.json();
 
       if (data.status !== 'ZERO_RESULTS') {
