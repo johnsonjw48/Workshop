@@ -3,6 +3,8 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import getTenStudents from '../Outils/query';
 
+require('dotenv').config()
+
 const calculTrajet = async () => {
   try {
     // const students = await getAllStudents();
@@ -19,7 +21,7 @@ const calculTrajet = async () => {
         .forEach(element => adress += element + '+');
       adress = adress.substring(0, adress.length - 1);
 
-      const result = await fetch(`https://digital-dashboard-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=${process.env.API_KEY}`);
+      const result = await fetch(`https://digital-dashboard-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=${adress}&destination=Digital+Campus+Paris&mode=transit&key=${process.env.REACT_APP_API_KEY}`);
       const data = await result.json();
 
       if (data.status !== 'ZERO_RESULTS') {
