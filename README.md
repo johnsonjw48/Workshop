@@ -1,10 +1,11 @@
-########## Pour notre projet ##########
+##### Pour notre projet #####
 
 
-Notre projet est composé de 2 parties : une partie en front-end et une partie en back-end. Pour lancer notre projet et que celui-ci soit fonctionnel, vous aurez besoin de 2 terminals : un pour lancer le front et l'autre le back.
+
+Notre projet est composé de 2 parties : une partie en front-end et une partie en back-end. Pour lancer notre projet et que celui-ci soit fonctionnel, vous aurez besoin de 2 terminals : un pour lancer le front (notre application) et l'autre le back (l'API pour outrepasser le CORS de Google Maps, qui nous limite en terme de requêtes effecutées).
 
 
-### Partie Front ###
+## Partie Front ##
 
 1. Faire un clone de notre projet avec l'une de ces 2 commandes : 
 - `git clone https://github.com/johnsonjw48/Workshop.git` (HTTPS)
@@ -16,83 +17,31 @@ Notre projet est composé de 2 parties : une partie en front-end et une partie e
 3. Lancer le projet avec la commande suivante : 
 - `npm start`
 
+Pour que le projet soit fonctionnel, il y aura aussi besoin de créer un fichier .env à la racine du projet, afin de récupérer les données confidentielles, notamment la clé de l'API.
 
-### Partie Back ###
+
+## Partie Back ##
+
+1. Faire un clone de notre projet avec l'une de ces 2 commandes : 
+- `git clone https://github.com/kameronramah/dashboard-back.git` (HTTPS)
+- `git clone git@github.com:kameronramah/dashboard-back.git`     (SSH)
+
+2. Installer toutes les dépendances de notre projet :
+- `npm install`
+
+3. Lancer le projet avec la commande suivante : 
+- `npm start`
+
+4. Laisser tourner le projet en fond, pour que tout soit fonctionnel (sans fermer le terminal ou interrompre le processus)
+
+
+Pour que le projet soit fonctionnel, il y aura aussi besoin de créer un fichier .env à la racine du projet, afin de récupérer les données confidentielles, notamment la clé de l'API.
+
+
+## Technologies utilisées ##
+
+Pour ce qui est des technologies utilisées 
 
 
 
 #######################################
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
