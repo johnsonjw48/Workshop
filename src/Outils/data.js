@@ -9142,4 +9142,4 @@ const students = [
     }
   ]
 
-  export default entreprises;
+  export default classes;
