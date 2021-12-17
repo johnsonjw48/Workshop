@@ -24,7 +24,7 @@ Pour que le projet soit fonctionnel, il y aura aussi besoin de créer un fichier
 ## Technologies utilisées ##
 
 Pour ce qui est des technologies utilisées, nous avons opté pour l'utilisation d'une base de données en NoSQL, qui est Firebase. Nous sommes partis sur cette idée car l'intégration d'un dashboard sur une appli React nous a paru la meilleure des solutions à utiliser. De plus, Firebase étant un outil Google, la communication entre React et Firebase est simplifiée, car Firebase ne fonctionne qu'avec des projets JavaScript. Nous aurions pu utiliser d'autres langages de JavaScript comme AngularJS ou VueJS, mais au vu du temps imparti, l'idée de l'application React nous a paru la plus optimale car nous avions le plus de connaissances dans ce domaine et la documentation est très bien renseignée.
-Nous avons utilisé aussi Big Query, qui est une extension de Firebase afin de faire la connexion entre Firebase et Data Studio, l'outil que les DMM ont utilisé pour créer leur dashboard. Etant tous 2 des outils Google, relier les 2 ne nous as pas trop posé de problèmes
+Nous avons utilisé aussi Big Query, qui est une extension de Firebase afin de faire la connexion entre cloud firestore et Data Studio, l'outil que les DMM ont utilisé pour créer leur dashboard. Etant tous 2 des outils Google, relier les 2 ne nous as pas trop posé de problèmes
 
 
 
