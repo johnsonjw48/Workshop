@@ -1,3 +1,31 @@
+########## Pour notre projet ##########
+
+
+Notre projet est composé de 2 parties : une partie en front-end et une partie en back-end. Pour lancer notre projet et que celui-ci soit fonctionnel, vous aurez besoin de 2 terminals : un pour lancer le front et l'autre le back.
+
+
+### Partie Front ###
+
+1. Faire un clone de notre projet avec l'une de ces 2 commandes : 
+- `git clone https://github.com/johnsonjw48/Workshop.git` (HTTPS)
+- `git clone git@github.com:johnsonjw48/Workshop.git`     (SSH)
+
+2. Installer toutes les dépendances de notre projet :
+- `npm install`
+
+3. Lancer le projet avec la commande suivante : 
+- `npm start`
+
+
+### Partie Back ###
+
+
+
+#######################################
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
